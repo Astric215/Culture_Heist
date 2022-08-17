@@ -1,5 +1,9 @@
 //keep variables up here
+-> set_vars
+===set_vars===
 VAR timer = 30
+
+VAR Car_Arrived = 0
 -> introduction
 
 === timer_text(-> return_to) ===
@@ -21,18 +25,24 @@ The leader tapped on the map of the museum.
 -> Driver_Start
 
 === Driver_Start ===
+~timer = 30 
 "Okay so Kai you are going to be the getaway driver."
 The leader pointed at the map again.
 "That means you won't be directly going into the museum. Instead you will organise disguises and get a car to the museum so the others can get out.'
 
--> Driver_End
+// use + not * so when the story loops choices are still available
++"Get the car."
+    ~timer = timer-1
+    ~ Car_Arrived = timer
+    ->Driver_End
++"Go straight to the museum."
+    -> Driver_End
 
 === Driver_End ===
 " Okay so that is the plan for Kai. Any objections?"
-
+{Car_Arrived == 0: ->Car_not_present}
 "Good"
 -> Recon_Start
-
 
 === Recon_Start ===
 "Okay so Rico will be a sort of Recon agent there to help Jules steal the artifact. It will be your job to make it as easy as possible for Jules to get in and out."
@@ -56,5 +66,11 @@ The leader pointed at the map again.
 "Okay now that everyone knows their parts its time to get ready to leave. We only have until the artifact is transfered to pull this off. Lets go" 
 The leader paused for one second.
 "Good luck"
-
+//check to demonstrate times being held
+"Kai will get the car {Car_Arrived} minute{Car_Arrived > 1:s} before the heist is complete."
 -> END
+
+//objections down here
+===Car_not_present===
+Jules spoke up. "How am I supposed to escape if there is no escape vehicle?" "You are right lets go over this again"
+-> Driver_Start
