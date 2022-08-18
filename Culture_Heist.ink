@@ -1,5 +1,5 @@
-//keep variables up here
 -> set_vars
+//keep variables up here
 ===set_vars===
 VAR timer = 30
 
@@ -70,7 +70,7 @@ The leader paused for one second.
 "Kai will get the car {Car_Arrived} minute{Car_Arrived > 1:s} before the heist is complete."
 -> END
 
-//objections down here
+//objections down here perhaps these should be threads
 ===Car_not_present===
 Jules spoke up. "How am I supposed to escape if there is no escape vehicle?" "You are right lets go over this again"
 -> Driver_Start
