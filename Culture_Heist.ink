@@ -15,6 +15,8 @@ VAR Car_Arrived = 0
 The leader tapped on the map of the museum.
 "We are going to steal the [insert here]."
 
+//peepee poopoo
+
 -(postscript)
  -> timer_text(-> done)
 -(done)
