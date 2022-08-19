@@ -1,4 +1,3 @@
-//testing
 -> set_vars
 //keep variables up here
 ===set_vars===
@@ -15,8 +14,6 @@ VAR Car_Arrived = 0
 "So, here is the plan."
 The leader tapped on the map of the museum.
 "We are going to steal the [insert here]."
-
-//peepee poopoo
 
 -(postscript)
  -> timer_text(-> done)
