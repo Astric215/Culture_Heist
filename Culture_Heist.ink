@@ -1,9 +1,20 @@
 -> set_vars
 //keep variables up here
 ==set_vars==
-VAR timer = 30
+VAR timer = 0
+VAR timer_default = 5
+LIST Inventory = (Placeholder)
+~Inventory = ()
 VAR next_end = ->introduction
+//preparation action variables.
 VAR Car_Arrived = 0
+VAR Costumes_Dropped_Off = 0
+VAR Staff_Door_Unlocked = 0
+VAR Distraction_Created = 0
+VAR Guard_Knocked_Out = 0
+VAR Cameras_Off = 0
+VAR Security_Off = 0
+
 -> introduction
 
 == timer_text(-> return_to_story) ==
@@ -15,9 +26,10 @@ VAR Car_Arrived = 0
 + [Wait]
     -> wait(-> postscript)
 
-
+TODO: there is currently a bug where waiting to the end of a loop with the watch causes the watch options to be available at the start of the next loop
 == wait(-> return_to) ==
 "You are gonna wait there for a minute."
+<-advance_time
 -> return_to
 
 == advance_time ==
@@ -59,7 +71,7 @@ TODO: add location nodes -Marlene and Patrick
 //the below nodes handle the meta conversation where the leader describes
 //the plan or objections are raised to it. The format is Start, objects, End
 == Driver_Start ==
-~timer = 30
+~timer = timer_default
 ~next_end = ->Driver_End
 "Okay so Kai you are going to be the getaway driver."
 The leader pointed at the map again.
@@ -69,7 +81,7 @@ The leader pointed at the map again.
 +"Get the car."
     <-advance_time
     ~Car_Arrived = timer
-    -> Secret_Base
+    -> Driver_Start
 +"Go straight to the museum."
     ->Driver_End
     
@@ -79,15 +91,33 @@ The leader pointed at the map again.
         -> timer_text(-> done)
     -(done)
     -> Driver_Start //this needs to be different
+
+//Driver objections
 ==Car_not_present==
-Jules spoke up. "How am I supposed to escape if there is no escape vehicle?" "You are right lets go over this again"
+Jules spoke up. "How am I supposed to escape if there is no escape vehicle?" 
+"You are right lets go over this again"
 -> Driver_Start
 
-TODO: add objections to the driver part of the plan -David
+==Costumes_not_dropped==
+Rico spoke up "Jules and I are going to need some kind of disguise to get around the staff hallways."
+He paused for a second and said "I mean the plan is to not get caught, right."
+The leader pondered the possibility of getting caught on purpose for a second and then responded. 
+"It certainly isn't. We must have missed something. Let's go over this again.
+-> Driver_Start
+
+==Door_not_open==
+Rico spoke up "We are going to need to have the loading bay staff door unlocked if we are going to escape through that door."
+He pointed at the map.
+"It says here that the door is locked from the loading bay side."
+The leader studied the map.
+"Right you are Rico. Let' go over this again to make sure we have the right plan down."
+->Driver_Start
 
 == Driver_End ==
 " Okay so that is the plan for Kai. Any objections?"
 {Car_Arrived == 0: ->Car_not_present}
+{Costumes_Dropped_Off == 0: ->Costumes_not_dropped}
+{Staff_Door_Unlocked == 0: ->Door_not_open}
 "Good"
 -> Recon_Start
 
