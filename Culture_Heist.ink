@@ -147,15 +147,14 @@ The leader pointed at the map again.
     ->Side_Hall_2
 
 ==Guard_Hall==
-"bdjsbujb"
-
-*[Knock out guard]
+"bsnennusw"
 
 +[Go to the Mailroom]
     ->Mailroom
     
-+[Go to Security Room] //Only if you've gotten the disguises
-    ->Security_Room
++[Go to Security Room]
+    //If costumes obtained ->Costumes_Obtained
+    //If costumes not obtained ->Costumes_not_Obtained
     
 +[Go to Vault Hall] //Only visable if you've gotten the key card
     ->Vault_Hall
@@ -163,16 +162,23 @@ The leader pointed at the map again.
 +[Go to Side Hall 1] //Only visable to the Recon
     ->Side_Hall_1
     
-==Security_Room==
-"dhudsnsinis"
 
 
 ==Vault_Hall==
 "hdudhfije"
 
 
+==Costumes_Obtained==
+"When you enter the Security Room you'll see computer screens lining the walls. To your left will be the button you'll have to press to turn off and wipe the security cameras. Thankfully you've already picked up the security guard uniforms so being spot won't be a problem."
 
++[Exit the Security Room]
+    ->Guard_Hall
 
+==Costumes_not_Obtained==
+Kai cuts the leader off "Wait wait wait. I didn't go through all that trouble grabbing that guard uniform for you to waltz into the Security Room looking like a convict." 
+"They're right," Rico says, "If I'm gonna be going into the Security Room I'm gonna need to pick up The uniform Kai dropped off for me in the mailroom."
+"All right then, so Rico, you don't go into the Security Room."
+    ->Guard_Hall
 
 //Driver objections
 ==Car_not_present==
