@@ -25,11 +25,11 @@ VAR Security_Off = 0
 "At this point we would only have {timer} minutes to complete the heist."
 + [Stop checking watch]
     -> return_to_story
-    
-+ [Wait]
-    -> wait(-> postscript)
 
-TODO: there is currently a bug where waiting to the end of a loop with the watch causes the watch options to be available at the start of the next loop
++ [Wait]
+    {timer > 1: ->wait(-> postscript)}
+    ->next_end
+
 == wait(-> return_to) ==
 "You are gonna wait there for a minute."
 <-advance_time
@@ -66,8 +66,16 @@ The leader tapped on the map of the museum.
 The leader looked around the dark damp walls of the Secret base.
 "You already know this place well obviously. Too bad we will have to be leaving it soon"
 The leader sighed wistfully.
+"Anyways let's get back to the plan."
+The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait == Sneaky: Jules}.
+"Okay {trait == Charismatic: Kai}{trait == Strong: Rico}{trait == Sneaky: Jules}. Here is the first thing you are going to do."
 
-+[Leave the Base]"You are going to head out that door over there." 
++[Leave the Base]"You are going to head out that door over there."
++[Check watch]
+    -(postscript)
+        -> timer_text(-> done)
+    -(done)
+    -> Secret_Base //this needs to be different
 ->Travel
 
 ->END
@@ -93,15 +101,15 @@ TODO: add location nodes -Marlene and Patrick
 "This is where all of the less important historical artifacts are kept for public viewing."
  
 +[Enter Side Hall 1]
-    ->Side_Hall_1
+    ->Side_Wing_1
 
 +[Enter Side Hall 2]
-    ->Side_Hall_2
+    ->Side_Wing_2
     
 +[Go to Entryway]
     ->Museum_Entryway
 
-==Side_Hall_1==
+==Side_Wing_1==
 "On one end of the room is a large metal gate that leads to the security room. Next to it is a vending machine, presumably for the guests."
 
 +[Enter Guard Hall] "That's where you come in and use those muscles to lift the giant metal gate blocking the entrance to the Guard Hall. Unfortunately it will shut behind you once you crawl under, but you can deal with that again if you need to."  
@@ -111,7 +119,7 @@ TODO: Make a knot for when you can't enter
 +[Go to the Main Hall]
     ->Main_Hall
 
-==Side_Hall_2==
+==Side_Wing_2==
 "This room is quite small. Mostly used for storage, you'll find cleaning supplies and tools here for setting up new exhibits. Theres also a vent on the east end of the room.
 
 +[Enter vents to Mailroom] "Thanks to your small frame you should be able to crawl through the air vents and find your way to the Mailroom.
@@ -131,7 +139,7 @@ TODO: Add pick up disguise knot and knot for if he diguise has already been pick
     ->Guard_Hall
 
 +[Enter Vents to Side Hall 2]
-    ->Side_Hall_2
+    ->Side_Wing_2
 TODO: Make a knot for when you can't enter
     
 +[Enter Loading Bay]
@@ -152,7 +160,7 @@ TODO: I had a hard time coming up with a description because of how many states 
 TODO: Make a knot for when you can't enter because you don't have the keycard
 
 +[Go to Side Hall 1]
-    ->Side_Hall_1
+    ->Side_Wing_1
 TODO: Make a knot for when you can't enter
 
 ==Vault_Hall==
@@ -160,11 +168,15 @@ TODO: Make a knot for when you can't enter
 
 +[Open Vault]
 
+--> END
+
 ==Loading_Bay==
 //Option 1 for when the getaway car is NOT set up 
 "You'll then enter a huge warehouse with rows and rows of wooden crates and packing materials scattered about the floor.
 
 //Option 2 for when the geaway car is set up
+
+--> END
 
 ==Costumes_Obtained==
 "When you enter the Security Room you'll see computer screens lining the walls. To your left will be the button you'll have to press to turn off the motion sensors around the vault. Thankfully you've already picked up the security guard uniforms so being spot won't be a problem."
@@ -186,6 +198,7 @@ Kai cuts the leader off "Wait wait wait. I didn't go through all that trouble gr
 The leader pointed at the map again.
 "That means you won't be directly going into the museum. Instead you will organise disguises and get a car to the museum so the others can get out.'
 
+-> Secret_Base
 // use + not * so when the story loops choices are still available
 +"Get the car."
     <-advance_time
