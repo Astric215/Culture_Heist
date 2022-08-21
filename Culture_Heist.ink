@@ -91,6 +91,88 @@ The leader pointed at the map again.
         -> timer_text(-> done)
     -(done)
     -> Driver_Start //this needs to be different
+    
+==Outside==
+"Once you're outside you'll be able to see the two giant doors leading to the museum's front hall. The museum also received a large grant recently, so you'll see the cheesy bushes shaped like famous statues out there as well.
+
++[Enter the meuseum]
+    ->Museum_Entryway
+
+==Museum_Entryway==
+"When you sneak in the museum's entryway, there will be a guard running patrol, an empty front desk ahead of you, and a water bottle re-fill station to your left."
+
++[Go to the Main Hall]
+    ->Main_Hall
+
++[Exit the museum]
+    ->Outside
+
+==Main_Hall==
+"This is where all of the less important historical artifacts are kept for public viewing."
+ 
++[Enter Side Hall 1]
+    ->Side_Hall_1
+
++[Enter Side Hall 2]
+    ->Side_Hall_2
+    
++[Go to Entryway]
+    ->Museum_Entryway
+
+==Side_Hall_1==
+"This is where"
+
++[Enter Guard Hall] "That's where you come in and use those muscles to lift the giant metal gate blocking the entrance to the Guard Hall. Unfortunately it will shut behind you once you crawl under, but you can deal with that again if you need to." //Only visable to the Recon
+    ->Guard_Hall
+
++[Go to the Main Hall]
+    ->Main_Hall
+
+==Side_Hall_2==
+"jodjfoedmfoe"
+
++[Enter vents to Mailroom] "Thanks to your small frame you should be able to crawl through the air vents and find your way to the Mailroom. //Only visable to the Thief
+    ->Mailroom
+    
++[Go to the Main Hall]
+    ->Main_Hall
+    
+==Mailroom==
+"hisnisn"
+    
++[Enter Guard Hall]
+    ->Guard_Hall
+
++[Enter Vents to Side Hall 2] //Only Visable to the Thief
+    ->Side_Hall_2
+
+==Guard_Hall==
+"bdjsbujb"
+
+*[Knock out guard]
+
++[Go to the Mailroom]
+    ->Mailroom
+    
++[Go to Security Room] //Only if you've gotten the disguises
+    ->Security_Room
+    
++[Go to Vault Hall] //Only visable if you've gotten the key card
+    ->Vault_Hall
+
++[Go to Side Hall 1] //Only visable to the Recon
+    ->Side_Hall_1
+    
+==Security_Room==
+"dhudsnsinis"
+
+
+==Vault_Hall==
+"hdudhfije"
+
+
+
+
 
 //Driver objections
 ==Car_not_present==
