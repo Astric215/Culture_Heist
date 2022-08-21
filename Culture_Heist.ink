@@ -3,9 +3,12 @@
 ==set_vars==
 VAR timer = 0
 VAR timer_default = 5
-LIST Inventory = (Placeholder)
-~Inventory = ()
+VAR has_costumes = false
+VAR has_car = false
+VAR has_keycard = false
+
 VAR next_end = ->introduction
+LIST trait = (Nothing), Charismatic, Strong, Sneaky
 //preparation action variables.
 VAR Car_Arrived = 0
 VAR Costumes_Dropped_Off = 0
@@ -36,10 +39,14 @@ TODO: there is currently a bug where waiting to the end of a loop with the watch
 ~timer = timer - 1
 {timer == 0: ->next_end}
 
+== function next_character ==
+~timer = timer_default
+~trait++
 == introduction ==
 "So, here is the plan."
 The leader tapped on the map of the museum.
 "We are going to steal the [insert here]."
+ ~ next_character()
 
 /*-(postscript)
  -> timer_text(-> done)
@@ -67,31 +74,6 @@ The leader sighed wistfully.
 
 TODO: add location nodes -Marlene and Patrick
 
-
-//the below nodes handle the meta conversation where the leader describes
-//the plan or objections are raised to it. The format is Start, objects, End
-== Driver_Start ==
-~timer = timer_default
-~next_end = ->Driver_End
-"Okay so Kai you are going to be the getaway driver."
-The leader pointed at the map again.
-"That means you won't be directly going into the museum. Instead you will organise disguises and get a car to the museum so the others can get out.'
-
-// use + not * so when the story loops choices are still available
-+"Get the car."
-    <-advance_time
-    ~Car_Arrived = timer
-    -> Driver_Start
-+"Go straight to the museum."
-    ->Driver_End
-    
-//this can be used to let the playr wait or check turns remaining
-+[Check watch]
-    -(postscript)
-        -> timer_text(-> done)
-    -(done)
-    -> Driver_Start //this needs to be different
-    
 ==Outside==
 "Once you're outside you'll be able to see the two giant doors leading to the museum's front hall. The museum also received a large grant recently, so you'll see the cheesy bushes shaped like famous statues out there as well.
 
@@ -173,6 +155,28 @@ The leader pointed at the map again.
 
 
 
+//the below nodes handle the meta conversation where the leader describes
+//the plan or objections are raised to it. The format is Start, objects, End
+== Driver_Start ==
+~next_end = ->Driver_End
+"Okay so Kai you are going to be the getaway driver."
+The leader pointed at the map again.
+"That means you won't be directly going into the museum. Instead you will organise disguises and get a car to the museum so the others can get out.'
+
+// use + not * so when the story loops choices are still available
++"Get the car."
+    <-advance_time
+    ~Car_Arrived = timer
+    -> Driver_Start
++"Go straight to the museum."
+    ->Driver_End
+    
+//this can be used to let the playr wait or check turns remaining
++[Check watch]
+    -(postscript)
+        -> timer_text(-> done)
+    -(done)
+    -> Driver_Start //this needs to be different
 
 //Driver objections
 ==Car_not_present==
@@ -208,9 +212,11 @@ The leader looked at Kai without moving his head. He then repositioned his body 
 {Costumes_Dropped_Off == 0: ->Costumes_not_dropped}
 {Staff_Door_Unlocked == 0: ->Door_not_open}
 "Good"
+~ next_character()
 -> Recon_Start
 
 == Recon_Start ==
+~next_end = ->Recon_End
 The leader shifted his gaze towards Rico.  "Okay so Rico will be a sort of Recon agent there to help Jules steal the artifact. It will be your job to make it as easy as possible for Jules to get in and out."
 -> Recon_End
 
@@ -255,9 +261,11 @@ Rico nodded "Okay, I can do that."
 ==Recon_End==
 "Any objections with Rico's part of the plan?"
 "Ok, moving on"
+~ next_character()
 -> Thief_Start
 
 ==Thief_Start==
+~next_end = ->Thief_End
 "And finally we get to our resident procurement specialist. Jules, your job is to use the resources and oppurtunities that Rico and Kai set up to get into the museum's storage vault and steal the artifact."
 -> Thief_End
 
