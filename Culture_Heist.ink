@@ -158,9 +158,13 @@ TODO: Make a knot for when you can't enter
 ==Vault_Hall==
 "By this point you will have finally found a way into the room with the safe But your work isn't done here!"
 
-==Loading_Bay==
-"ksnkniksn"
++[Open Vault]
 
+==Loading_Bay==
+//Option 1 for when the getaway car is NOT set up 
+"You'll then enter a huge warehouse with rows and rows of wooden crates and packing materials scattered about the floor.
+
+//Option 2 for when the geaway car is set up
 
 ==Costumes_Obtained==
 "When you enter the Security Room you'll see computer screens lining the walls. To your left will be the button you'll have to press to turn off the motion sensors around the vault. Thankfully you've already picked up the security guard uniforms so being spot won't be a problem."
