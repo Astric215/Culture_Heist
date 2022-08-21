@@ -81,7 +81,7 @@ TODO: add location nodes -Marlene and Patrick
     ->Museum_Entryway
 
 ==Museum_Entryway==
-"When you sneak in the museum's entryway, there will be a guard running patrol, an empty front desk ahead of you, and a water bottle re-fill station to your left."
+"When you sneak in the museum's entryway, there will be a guard running patrol. No need to worry about this one though because she works a day job too so she's usually fast asleep."
 
 +[Go to the Main Hall]
     ->Main_Hall
@@ -102,34 +102,43 @@ TODO: add location nodes -Marlene and Patrick
     ->Museum_Entryway
 
 ==Side_Hall_1==
-"This is where"
+"On one end of the room is a large metal gate that leads to the security room. Next to it is a vending machine, presumably for the guests."
 
-+[Enter Guard Hall] "That's where you come in and use those muscles to lift the giant metal gate blocking the entrance to the Guard Hall. Unfortunately it will shut behind you once you crawl under, but you can deal with that again if you need to." //Only visable to the Recon
++[Enter Guard Hall] "That's where you come in and use those muscles to lift the giant metal gate blocking the entrance to the Guard Hall. Unfortunately it will shut behind you once you crawl under, but you can deal with that again if you need to."  
     ->Guard_Hall
+TODO: Make a knot for when you can't enter
 
 +[Go to the Main Hall]
     ->Main_Hall
 
 ==Side_Hall_2==
-"jodjfoedmfoe"
+"This room is quite small. Mostly used for storage, you'll find cleaning supplies and tools here for setting up new exhibits. Theres also a vent on the east end of the room.
 
-+[Enter vents to Mailroom] "Thanks to your small frame you should be able to crawl through the air vents and find your way to the Mailroom. //Only visable to the Thief
++[Enter vents to Mailroom] "Thanks to your small frame you should be able to crawl through the air vents and find your way to the Mailroom.
     ->Mailroom
-    
+TODO: Make a knot for when you can't enter
+
 +[Go to the Main Hall]
     ->Main_Hall
     
 ==Mailroom==
-"hisnisn"
+"This is the mailroom where exhibits are shipped off and others are held before going on display. On the South end of the room is the door to the Loading Bay with a mail slot next to it."
+
+*[Pick up disguises]
+TODO: Add pick up disguise knot and knot for if he diguise has already been picked up.
     
 +[Enter Guard Hall]
     ->Guard_Hall
 
-+[Enter Vents to Side Hall 2] //Only Visable to the Thief
++[Enter Vents to Side Hall 2]
     ->Side_Hall_2
+TODO: Make a knot for when you can't enter
+    
++[Enter Loading Bay]
+->Loading_Bay
 
 ==Guard_Hall==
-"bsnennusw"
+TODO: I had a hard time coming up with a description because of how many states this room has. There's also many choices that may or may not be available in this room like grabbing the keycard etc... 
 
 +[Go to the Mailroom]
     ->Mailroom
@@ -138,20 +147,23 @@ TODO: add location nodes -Marlene and Patrick
     //If costumes obtained ->Costumes_Obtained
     //If costumes not obtained ->Costumes_not_Obtained
     
-+[Go to Vault Hall] //Only visable if you've gotten the key card
++[Go to Vault Hall]
     ->Vault_Hall
+TODO: Make a knot for when you can't enter because you don't have the keycard
 
-+[Go to Side Hall 1] //Only visable to the Recon
++[Go to Side Hall 1]
     ->Side_Hall_1
-    
-
+TODO: Make a knot for when you can't enter
 
 ==Vault_Hall==
-"hdudhfije"
+"By this point you will have finally found a way into the room with the safe But your work isn't done here!"
+
+==Loading_Bay==
+"ksnkniksn"
 
 
 ==Costumes_Obtained==
-"When you enter the Security Room you'll see computer screens lining the walls. To your left will be the button you'll have to press to turn off and wipe the security cameras. Thankfully you've already picked up the security guard uniforms so being spot won't be a problem."
+"When you enter the Security Room you'll see computer screens lining the walls. To your left will be the button you'll have to press to turn off the motion sensors around the vault. Thankfully you've already picked up the security guard uniforms so being spot won't be a problem."
 
 +[Exit the Security Room]
     ->Guard_Hall
