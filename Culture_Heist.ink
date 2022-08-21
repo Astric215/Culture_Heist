@@ -156,15 +156,14 @@ TODO: add location nodes -Marlene and Patrick
 +[Exit the Security Room]
     ->Guard_Hall
 
-<<<<<<< HEAD
 ==Costumes_not_Obtained==
 Kai cuts the leader off "Wait wait wait. I didn't go through all that trouble grabbing that guard uniform for you to waltz into the Security Room looking like a convict." 
 "They're right," Rico says, "If I'm gonna be going into the Security Room I'm gonna need to pick up The uniform Kai dropped off for me in the mailroom."
 "All right then, so Rico, you don't go into the Security Room."
     ->Guard_Hall
-=======
 //the below nodes handle the meta conversation where the leader describes
 //the plan or objections are raised to it. The format is Start, objects, End
+
 == Driver_Start ==
 ~next_end = ->Driver_End
 "Okay so Kai you are going to be the getaway driver."
@@ -185,7 +184,6 @@ The leader pointed at the map again.
         -> timer_text(-> done)
     -(done)
     -> Driver_Start //this needs to be different
->>>>>>> 25235915e4c2a2169a2b4af73387eb9085d1998e
 
 //Driver objections
 ==Car_not_present==
