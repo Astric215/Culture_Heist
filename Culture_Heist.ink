@@ -20,6 +20,11 @@ VAR Security_Off = 0
 
 -> introduction
 
+==function reset_vars==
+~ has_costume = false
+~ has_car = false
+~ has_keycard = false
+
 == timer_text(-> return_to_story) ==
 -(postscript)
 "At this point we would only have {timer} minutes to complete the heist."
@@ -536,6 +541,10 @@ The leader tapped the loading bay on the map.
 //the plan or objections are raised to it. The format is Start, objects, End
 
 == Driver_Start ==
+~ Car_Arrived = 0
+~ Costumes_Dropped_Off = 0
+~ Staff_Door_Unlocked = 0
+~ reset_vars()
 ~next_end = ->Driver_End
 "Okay so Kai you are going to be the getaway driver."
 The leader pointed at the map again.
@@ -595,6 +604,11 @@ The leader looked at Kai without moving his head. He then repositioned his body 
 -> Recon_Start
 
 == Recon_Start ==
+~ Distraction_Created = 0
+~ Guard_Knocked_Out = 0
+~ Cameras_Off = 0
+~ Security_Off = 0
+~ reset_vars()
 ~next_end = ->Recon_End
 The leader shifted his gaze towards Rico.  "Okay so Rico will be a sort of Recon agent there to help Jules steal the artifact. It will be your job to make it as easy as possible for Jules to get in and out."
 -> Secret_Base
@@ -644,6 +658,7 @@ Rico nodded "Okay, I can do that."
 -> Thief_Start
 
 ==Thief_Start==
+~ reset_vars()
 ~next_end = ->Thief_End
 "And finally we get to our resident procurement specialist. Jules, your job is to use the resources and opportunities that Rico and Kai set up to get into the museum's storage vault and steal the artifact."
 -> Secret_Base
@@ -654,9 +669,8 @@ Rico nodded "Okay, I can do that."
 -> Closing
 
 == Closing ==
-"Okay now that everyone knows their parts its time to get ready to leave. We only have until the artifact is transferred to pull this off. Lets go" 
+"Okay now that everyone knows their parts its time to get ready to leave. We only have until the artifact is put on display to pull this off. We need to get the artifact out of there before then. Lets return this important piece of culture to its people. Lets go everyone.
 The leader paused for one second.
 "Good luck"
-//check to demonstrate times being held
-"Kai will get the car {Car_Arrived} minute{Car_Arrived > 1:s} before the heist is complete."
+Everyone nodded and left the secret base to carry out the plan.
 -> END
