@@ -133,6 +133,7 @@ TODO: add location nodes -Marlene and Patrick
 
 
 ==Outside==
+At first glance, the museum’s exterior seems to be made up of limestone and cubed lights. The squared arches reveal many panes of glass that obscure the ability to look in or out, and with the roofline filled with camp guard towers, the building was like a fortress. Home to a world-renowned collection, this was a landmark building that claims it is a place that welcomes everyone. Collection highlights include the world’s largest and most important collection of works by Black, Indigenous, and Latin American artists and with their featured extraordinary period rooms, the museum invites visitors to see the arts in varied ways.
 "Once you're outside you'll be able to see the two giant doors leading to the museum's front hall." 
 "The museum also received a large grant recently, so you'll see the cheesy bushes shaped like famous statues out there as well."
 
@@ -151,6 +152,7 @@ TODO: add location nodes -Marlene and Patrick
 ==Museum_Entryway==
 "The entryway will be the easiest room to blend into due to the large number of museum-goers walking around and buying their tickets at the front desk." 
 "There will likely be several groups of children incessantly blabbing about how they see boobies in every painting, or how 'Mindy's little brother keeps pulling on my hair.' So no need to worry about making too much noise either. The public's attention certainly won't be on you."
+Recently, the museum announced its busiest year yet and the sudden influx can be attributed to the highly successful exhibitions. Averaging approximately over 30,000 visitors a day, the museum staff has been forced to close the exhibits for a day or two to meet about crowding and overworking conditions. Unlike the envisioned air-conditioned refuge you would imagine, the museum with its overcrowding gets uncomfortably warm and you can see countless numbers of visitors fanning themselves with maps and brochures as they race to find water fountains and seats.
 
 +[Go to the Main Hall]
     ->Main_Hall
@@ -192,6 +194,7 @@ TODO: add location nodes -Marlene and Patrick
 
 ==Side_Wing_2==
 "This wing of the museum is where the majority of the statues are displayed. Although most of the museum makes me shake my head, the statue room is weirdly comforting to me. Maybe it has something to do with my love of marble. Anyways the only important thing to note is the small vent on the north east end of the room.
+Set up like a temple, the wing was decorated with sculptures that depicted scenes from mythology and cult, while the walls were constructed of gold and ivory. Some of these statues have been on permanent display for decades and on either end of the room you can see transepts. Even the walls are carved metopes. While it is universally recognized that the best seen and conserved sculptures are those that exist in museums, some of these pieces of art are symbols of power and of ancient pasts where the collection of antiquities have been transported outside of their respective countries.
 
 +[Enter the vents to the Mailroom]
 {
