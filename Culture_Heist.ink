@@ -203,7 +203,7 @@ At first glance, the museum’s exterior seems to be made up of limestone and cu
 -(start)
 "The entryway will be the easiest room to blend into due to the large number of museum-goers walking around and buying their tickets at the front desk." 
 "There will likely be several groups of children incessantly blabbing about how they see boobies in every painting, or how 'Mindy's little brother keeps pulling on my hair.' So no need to worry about making too much noise either. The public's attention certainly won't be on you."
-Recently, the museum announced its busiest year yet and the sudden influx can be attributed to the highly successful exhibitions. Averaging approximately over 30,000 visitors a day, the museum staff has been forced to close the exhibits for a day or two to meet about crowding and overworking conditions. Unlike the envisioned air-conditioned refuge you would imagine, the museum with its overcrowding gets uncomfortably warm and you can see countless numbers of visitors fanning themselves with maps and brochures as they race to find water fountains and seats.
+Recently, the museum announced its busiest year yet and the sudden influx can be attributed to the highly successful exhibitions. Averaging approximately over 30,000 visitors a day, the museum staff has been forced to close the exhibits for a day or two to meet about crowding and overworking conditions. Unlike the envisioned air-conditioned refuge you would imagine, the museum with its overcrowding gets uncomfortably warm and you can see countless numbers of visitors fanning themselves with maps and brochures as they race to find water fountains and seats. Blend in.
 
 +[Go to the Main Hall]
     ->Main_Hall
@@ -244,9 +244,11 @@ Recently, the museum announced its busiest year yet and the sudden influx can be
 {
 -trait==Strong:
 "That's where you come in and use those muscles to lift the giant metal gate blocking the entrance to the staff hallways. Unfortunately it will shut behind you once you crawl under, but you can deal with that again if you need to." 
+I hope that they are not just for show. Just try not to hurt yourself please. Any time you are upright and moving, you’re engaging the muscles in your core. The power, stability, and support generated from these muscles will help you move quicker and protect your lower back from injury. So avoid lifting with your back as well and try to only lift with your legs. We can’t have you hurting yourself on the job.
     ->Guard_Hall
 -else:
-"You wont be able to lift that".
+"You won't be able to lift that."
+This is because lifting it is too heavy and can cause you muscle and joint damage as you are not trained to do this sort of heavy lifting. The dangers of lifting without proper training can cause spinal injuries such as herniated discs and in extreme cases, heavy lifting can even tear a heart artery, which could result in death. This is a load too heavy to lift and it is not worth putting a terrible strain on your body which can lead to painful muscle sprains and tears. You could even end up with a slipped disc or a hernia.
     ->Side_Wing_1
 }
 
