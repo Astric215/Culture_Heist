@@ -73,6 +73,7 @@ The leader tapped on the map of the museum.
 
 //locations go below here
 ==Secret_Base==
+-(start)
 The leader looked around the dark damp walls of the Secret base.
 "You already know this place well obviously. Too bad we will have to be leaving it soon"
 The leader sighed wistfully.
@@ -84,10 +85,7 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 ->Travel
 
 +[Check watch]
-    -(postscript)
-        -> timer_text(-> done)
-    -(done)
-    -> Secret_Base //this needs to be different
+    -> timer_text(-> start)
 
 
 ->END
@@ -126,6 +124,9 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
     ->Car_Dealership
 }
 
++[Check watch]
+    -> timer_text(-> start)
+    
 ==Costume_Store==
 <-advance_time
 -(start)
@@ -160,6 +161,9 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
     ->Costume_Store
 }
 
++[Check watch]
+    -> timer_text(-> start)
+
 
 ==Outside==
 <-advance_time
@@ -178,6 +182,9 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
  
 +[Go to the back of the museum] //Only if you are the driver
     ->Loading_Bay
+    
++[Check watch]
+    -> timer_text(-> start)
 
 ==Museum_Entryway==
 <-advance_time
@@ -191,6 +198,9 @@ Recently, the museum announced its busiest year yet and the sudden influx can be
 
 +[Exit the museum]
     ->Outside
+    
++[Check watch]
+    -> timer_text(-> start)
 
 ==Main_Hall==
 <-advance_time
@@ -207,6 +217,9 @@ Recently, the museum announced its busiest year yet and the sudden influx can be
     
 +[Go to Entryway]
     ->Museum_Entryway
+    
++[Check watch]
+    -> timer_text(-> start)
 
 ==Side_Wing_1==
 <-advance_time
@@ -227,6 +240,9 @@ Recently, the museum announced its busiest year yet and the sudden influx can be
 
 +[Go to the Main Hall]
     ->Main_Hall
+    
++[Check watch]
+    -> timer_text(-> start)
 
 ==Side_Wing_2==
 <-advance_time
@@ -247,6 +263,9 @@ Set up like a temple, the wing was decorated with sculptures that depicted scene
 
 +[Go to the Main Hall]
     ->Main_Hall
+    
++[Check watch]
+    -> timer_text(-> start)
     
 ==Mailroom==
 <-advance_time
@@ -275,6 +294,9 @@ Temporary exhibitions often include objects that have been borrowed and will lat
     
 +[Enter Loading Bay]
 ->Loading_Bay
+
++[Check watch]
+    -> timer_text(-> start)
 
 ==Guard_Hall==
 <-advance_time
@@ -353,7 +375,9 @@ The Leader furrowed his brow and thought about Jules' comment.
     ~has_keycard = true
     ->Guard_Hall
 }
-    
+
++[Check watch]
+    -> timer_text(-> start)
 
 ==Vault_Hall==
 <-advance_time
@@ -371,13 +395,16 @@ The Leader furrowed his brow and thought about Jules' comment.
 
 +[Walk up to the vault] //this needs the check to make sure the cameras are off before you can take this action
     ->Vault
+    
++[Check watch]
+    -> timer_text(-> start)
 
 ==Vault==
 
 [Open the Vault]
 "You've finally done it. You're hands touch the artifact..."
 
-->END
+->Closing
 
 ==Loading_Bay==
 <-advance_time
@@ -388,6 +415,9 @@ The Leader furrowed his brow and thought about Jules' comment.
 //Option 2 for when the getaway car is set up
 "You'll then enter a huge warehouse with rows and rows of wooden crates and packing materials scattered about the floor. There's a red sports car near the exit ready to leave when you are."
 
++[Check watch]
+    -> timer_text(-> start)
+    
 ->END
 
 ==Security_Room==
@@ -398,6 +428,9 @@ The Leader furrowed his brow and thought about Jules' comment.
 +[Exit the Security Room]
     ->Guard_Hall
 
++[Check watch]
+    -> timer_text(-> start)
+    
 //the below nodes handle the meta conversation where the leader describes
 //the plan or objections are raised to it. The format is Start, objects, End
 
