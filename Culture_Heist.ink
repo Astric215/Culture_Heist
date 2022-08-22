@@ -234,6 +234,7 @@ Set up like a temple, the wing was decorated with sculptures that depicted scene
     ->Main_Hall
     
 ==Mailroom==
+Temporary exhibitions often include objects that have been borrowed and will later be returned to their owner, calling for a mailroom that doubles as a shipping store. Most of the objects on display are from the museum’s own personal collections so usually those would just go back into storage, however objects that are specifically acquired for an exhibition may require curator perk and revealing the security movement would be equivalent to divulging trade secrets. Early museums were often founded as ways for wealthy collectors to show off what they had acquired to less fortunate people and help to “educate” them. And unfortunately, that still stands to this day.
 "This is the mailroom where exhibits are shipped off and others are held before going on display. On the South end of the room is the door to the Loading Bay with a small mail slot next to it."
 
 *[Pick up disguises]
