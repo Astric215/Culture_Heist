@@ -338,9 +338,24 @@ The Leader furrowed his brow and thought about Jules' comment.
 ==Vault_Hall==
 "By this point you will have finally found a way into the room with the safe But your work isn't done here!"
 
-+[Open Vault]
+{ 
+    - Cameras_Off == 0:
+    "Thanks to Rico, the cameras should be fully disabled."
+    - Cameras_Off == timer:
+        "At that moment you'll be able to see the the camera's droop down towards the floor and the lights go off."
+    - timer < Cameras_Off:
+        "You can see a red light flashing near the cameras lense"
+}
 
---> END
++[Walk up to the vault] //this needs the check to make sure the cameras are off before you can take this action
+    ->Vault
+
+==Vault==
+
+[Open the Vault]
+"You've finally done it. You're hands touch the artifact..."
+
+->END
 
 ==Loading_Bay==
 //Option 1 for when the getaway car is NOT set up 
