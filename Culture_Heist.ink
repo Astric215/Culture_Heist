@@ -2,7 +2,7 @@
 //keep variables up here
 ==set_vars==
 VAR timer = 0
-VAR timer_default = 5
+VAR timer_default = 30
 VAR has_costumes = false
 VAR has_car = false
 VAR has_keycard = false
@@ -336,7 +336,7 @@ The leader looked at Kai without moving his head. He then repositioned his body 
 == Recon_Start ==
 ~next_end = ->Recon_End
 The leader shifted his gaze towards Rico.  "Okay so Rico will be a sort of Recon agent there to help Jules steal the artifact. It will be your job to make it as easy as possible for Jules to get in and out."
--> Recon_End
+-> Secret_Base
 
 == Distraction_not_created ==
 Jules cleared her throat. "I'm going to need some kind of distraction in order to get through the vent into the staff hallways."
@@ -385,7 +385,7 @@ Rico nodded "Okay, I can do that."
 ==Thief_Start==
 ~next_end = ->Thief_End
 "And finally we get to our resident procurement specialist. Jules, your job is to use the resources and opportunities that Rico and Kai set up to get into the museum's storage vault and steal the artifact."
--> Thief_End
+-> Secret_Base
 
 ==Thief_End==
 "Does that plan sound good to everyone?"
