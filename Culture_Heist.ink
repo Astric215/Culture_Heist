@@ -269,8 +269,10 @@ The boss pondered the statue layout for a second and then pointed at a staute of
 {
 -timer > Distraction_Created:
     "The museum patrons will likely be drifting from statue to statue observing each one."
+    Each statue has different representations in terms of their hand positioning, color and the items they may hold. So more often than not you can hear patrons trying to guess the deity and what the possible context behind the statues are. A lot of these statues range in different sizes, from small to big and even large with small size statues seemingly more difficult to craft and work on, so the quality of the work may not look as good as the work done on medium, or bigger statues but they are all very beautiful and impressive.
 -timer == Distraction_Created:
     "You should be able to see Rico push over a statue. That will kick up quite the frenzy amongst the museum goers."
+    It would not be uncommon for people to start yelling and shouting in this situation. Kids might feel inclined to pick up some of the falling debris or they may feel inspired to push a statue themselves. Some patrons might even believe this to be a part of an art show demonstration. But even if someone is caught ‘accidentally’ breaking the statue, historically, the museum will take their information not to collect on the damage but to issue a full report to the insurance company so that they can get a check for their imminent claim.
 -else:
     "Most museum patrons should be crowding the statue that Rico will have knocked over by this point. Any guards in the area will likely be dealing with that as well. This means that all eyes will be on that statue."
 }
