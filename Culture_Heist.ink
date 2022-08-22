@@ -3,7 +3,7 @@
 ==set_vars==
 VAR timer = 0
 VAR timer_default = 30
-VAR has_costumes = false
+VAR has_costume = false
 VAR has_car = false
 VAR has_keycard = false
 
@@ -91,8 +91,6 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 
 ->END
 
-TODO: add location nodes -Marlene and Patrick
-
 ==Car_Dealership==
 "You'll then go ahead and enter the car dealership. When you get there you'll notice several very expensive brands of cars parked out in front."
 "The dealer, Gary, should be waiting inside. You'll be able to tell its him by his bushy red goatee."
@@ -130,7 +128,7 @@ TODO: add location nodes -Marlene and Patrick
 
 
 ==Outside==
-"Once you're outside you'll be able to see the two giant doors leading to the museum's front hall." 
+"Once you're outside the museum, you'll be able to see the two giant doors leading to the museum's front hall." 
 "The museum also received a large grant recently, so you'll see the cheesy bushes shaped like famous statues out there as well."
 
 +[Enter the museum]
@@ -172,12 +170,12 @@ TODO: add location nodes -Marlene and Patrick
 ==Side_Wing_1==
 "Probably the least exciting room of the museum, the art gallery is lined with benches in the center facing outwards towards the walls."
 "The guards don't patrol this room as much as the others since it's usually just filled with old people taking a rest while their families leave them behind to rot alone."
-"The only thing of value for us to note is the large metal gate on the northern end of the room that leads to the guard hall."
+"The only thing of value for us to note is the large metal gate on the northern end of the room that leads to the staff hallways." The museum staff opens that gate electronically to get artifacts out onto the museum floor. The gate itself is rather heavy.
 
 +[Go through the metal gate] 
 {
 -trait==Strong:
-"That's where you come in and use those muscles to lift the giant metal gate blocking the entrance to the Guard Hall. Unfortunately it will shut behind you once you crawl under, but you can deal with that again if you need to." 
+"That's where you come in and use those muscles to lift the giant metal gate blocking the entrance to the staff hallways. Unfortunately it will shut behind you once you crawl under, but you can deal with that again if you need to." 
     ->Guard_Hall
 -else:
 "You wont be able to lift that".
@@ -188,7 +186,7 @@ TODO: add location nodes -Marlene and Patrick
     ->Main_Hall
 
 ==Side_Wing_2==
-"This wing of the museum is where the majority of the statues are displayed. Although most of the museum makes me shake my head, the statue room is weirdly comforting to me. Maybe it has something to do with my love of marble. Anyways the only important thing to note is the small vent on the north east end of the room.
+"This wing of the museum is where the majority of the statues are displayed. Although most of the museum makes me shake my head, the statue room is weirdly comforting to me. Maybe it has something to do with my love of marble. Anyways, the only important thing to note is the small vent on the north east end of the room.
 
 +[Enter the vents to the Mailroom]
 {
@@ -229,31 +227,81 @@ TODO: Add pick up disguise knot and knot for if the disguise has already been pi
 ->Loading_Bay
 
 ==Guard_Hall==
-TODO: I had a hard time coming up with a description because of how many states this room has. There's also many choices that may or may not be available in this room like grabbing the keycard etc...
-//Make sure to add that there is a metal gate leading to Side hall 1
+"There is a bit of a crossroads in the staff hallways. One of the halls will go north towards the Security room. The western hall will take you towards the vault. This hallway is a bit tricky though since in it locked off with a security door that can only be opened with a keycard that every guard carries. Finally the eastern hall will take you straight to the museum mail room. Since most traffic goes through this area, there should be a guard positioned there." 
+The leader tapped the crossing corridors on the map. There is also a large metal gate here that goes out onto the museum floor. The gate is quite heavy. Anyways, back to the guard." 
+{ 
+    - Guard_Knocked_Out == 0:
+    "The guard should be standing directly in the center of the crossroads."
+    - Guard_Knocked_Out == timer:
+        "You will get there just in time to see Rico knock out the guard."
+    - timer < Guard_Knocked_Out:
+        "By this point in time Rico will have already knocked out the guard. You will see the guard laying on the ground where Rico laid them out."
+}
+
++[Go through the metal gate]
+{
+-trait==Strong:
+"At this point you will go back into the museum proper through that gate. You will already have done this before by this point so it should be pretty easy for you. So, You'll just go ahead and lift that gate open one more time and head to the art gallery." 
+    ->Side_Wing_1
+-else:
+"That gate will be way too heavy for you to lift. We are going to have to find a different way for you to get back into the museum proper."
+    ->Guard_Hall
+}
 
 +[Go to the Mailroom]
     ->Mailroom
     
-+[Go to Security Room]
-    //If costumes obtained ->Costumes_Obtained
-    //If costumes not obtained ->Costumes_not_Obtained
-TODO: Fix this
-    
-+[Go to Vault Hall]
-    ->Vault_Hall
-TODO: Make a knot for when you can't enter because you don't have the keycard
-//{trait == Strong: Rico}{trait == Sneaky: Jules} stops the boss "Wait wait wait, I'm gonna need a keycard to get in there first. Maybe one of the guards in this room will have one on them."
-
-+[Go to Side Hall 1]
-{
--trait==Strong:
-"You'll just go ahead and lift that gate open one more time and head to the art gallery." 
-    ->Side_Wing_1
++{Guard_Knocked_Out >= timer}[Go to Security Room]
+    {
+-has_costume:
+    ->Security_Room
+-trait==Sneaky:
+    Jules intensely stared and the map and then at the leader.
+    "Why would it be a good idea at all for me to walk into a room filled with guards."
+    The leader nodded. "You are right that isnt a good idea."
+    ->Guard_Hall
 -else:
-"You wont be able to lift that".
+Kai cuts the leader off "Wait wait wait. I didn't go through all that trouble grabbing that guard uniform for you to waltz into the Security Room looking like a convict." 
+"They're right," Rico says, "If I'm gonna be going into the Security Room I'm gonna need to pick up The uniform Kai dropped off for me in the mailroom."
+"All right then, so Rico, you don't go into the Security Room."
     ->Guard_Hall
 }
+    
++[Go towards the vault]
+{
+-has_keycard:
+    ->Vault_Hall
+-else:
+    {trait == Strong: Rico}{trait == Sneaky: Jules} stops the boss "Wait wait wait, I'm gonna need a keycard to get in there first. Maybe the guard in this room will have one on them."
+    ->Guard_Hall
+}
++{Guard_Knocked_Out < timer} [Knock out the guard]
+{
+    -trait==Strong:
+        The leader looked intensely at Rico.
+        "Okay, so you are going to need to knock that guard out."
+        Rico looked taken aback for a second but then nodded his head.
+        "You got it, sir."
+        ~Guard_Knocked_Out = timer
+        ->Guard_Hall
+    -else:
+        Jules bit her fingernail. "There is no way that I are going to be able to overpower that guard. It is much better for me to wait for Rico to do it."
+        The leader shook his head in agreement.
+        ->Guard_Hall
+}
++{Guard_Knocked_Out >= timer && has_keycard==false} [Take the guard's keycard]
+    {
+-trait==Strong:
+Jules quickly spoke up. "Buddy, if Rico takes the keycard from the guard, what keycard am I going to use to get into the hallway leading to the vault."
+The Leader furrowed his brow and thought about Jules' comment.
+"You are right Jules. Rico will have to leave that card there."
+->Guard_Hall
+-else:
+"You are going to go through that guard's pockets and get their keycard. Once you get the keycard off of that guard, you will finally have access to the hallway leading to the vault."
+    ~has_keycard = true
+    ->Guard_Hall
+}
+    
 
 ==Vault_Hall==
 "By this point you will have finally found a way into the room with the safe But your work isn't done here!"
@@ -271,17 +319,12 @@ TODO: Make a knot for when you can't enter because you don't have the keycard
 
 ->END
 
-==Costumes_Obtained==
-"When you enter the Security Room you'll see computer screens lining the walls. To your left will be the button you'll have to press to turn off the motion sensors around the vault. Thankfully you've already picked up the security guard uniforms so being spot won't be a problem."
+==Security_Room==
+"When you enter the Security Room you'll see computer screens lining the walls. To your left will be the button you'll have to press to turn off the motion sensors around the vault. Thankfully, you've already picked up your security guard uniform so being spotted won't be a problem."
 
 +[Exit the Security Room]
     ->Guard_Hall
 
-==Costumes_not_Obtained==
-Kai cuts the leader off "Wait wait wait. I didn't go through all that trouble grabbing that guard uniform for you to waltz into the Security Room looking like a convict." 
-"They're right," Rico says, "If I'm gonna be going into the Security Room I'm gonna need to pick up The uniform Kai dropped off for me in the mailroom."
-"All right then, so Rico, you don't go into the Security Room."
-    ->Guard_Hall
 //the below nodes handle the meta conversation where the leader describes
 //the plan or objections are raised to it. The format is Start, objects, End
 
