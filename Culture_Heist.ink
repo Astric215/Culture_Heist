@@ -102,6 +102,7 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 {
 -trait==Charismatic:
 "With your charisma, that should be a piece of cake."
+    ~has_car = true
     ->Car_Dealership
 -else:
 "You won't need a second getaway vehicle, and even if you did there's no way you'd be able to convince him to give you another car. So back to the car dealership..."
@@ -138,7 +139,8 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 +[Acquire Security guard uniforms] //Only if you are the Driver
 {
 -trait==Charismatic:
-"You should have no problem walking right up to Burt, convincing him to give you guard uniforms and forged ID's, and waltzing right back out in no time." 
+"You should have no problem walking right up to Burt, convincing him to give you guard uniforms and forged ID's, and waltzing right back out in no time."
+    ~has_costume = true
     ->Costume_Store
 -else:
 "Thankfully Kai has already used their charm to gain the trust of Burt, so you won't need to get another set of security guard uniforms. Just pick them up from the mailroom where they dropped them off. So, you're in the costume store..."
