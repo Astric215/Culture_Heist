@@ -149,6 +149,7 @@ At first glance, the museum’s exterior seems to be made up of limestone and cu
 ==Museum_Entryway==
 "The entryway will be the easiest room to blend into due to the large number of museum-goers walking around and buying their tickets at the front desk." 
 "There will likely be several groups of children incessantly blabbing about how they see boobies in every painting, or how 'Mindy's little brother keeps pulling on my hair.' So no need to worry about making too much noise either. The public's attention certainly won't be on you."
+Recently, the museum announced its busiest year yet and the sudden influx can be attributed to the highly successful exhibitions. Averaging approximately over 30,000 visitors a day, the museum staff has been forced to close the exhibits for a day or two to meet about crowding and overworking conditions. Unlike the envisioned air-conditioned refuge you would imagine, the museum with its overcrowding gets uncomfortably warm and you can see countless numbers of visitors fanning themselves with maps and brochures as they race to find water fountains and seats.
 
 +[Go to the Main Hall]
     ->Main_Hall
