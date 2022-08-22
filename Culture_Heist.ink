@@ -83,7 +83,7 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 TODO: add location nodes -Marlene and Patrick
 
 ==Costume_Store==
-knknk
+As you enter the costume store you'll likely be greeted by Burt, the store manager. Although it may look like a normal costume shop, you may be able to sneak a peak behind Burts desk and see real police badges or forged signatures on several political documents."
 
 ==Outside==
 "Once you're outside you'll be able to see the two giant doors leading to the museum's front hall." 
@@ -184,7 +184,7 @@ TODO: Make a knot for when you can't enter
 "You'll then enter a huge warehouse with rows and rows of wooden crates and packing materials scattered about the floor."
 
 //Option 2 for when the geaway car is set up
-
+"You'll then enter a huge warehouse with rows and rows of wooden crates and packing materials scattered about the floor. There's a red sports car near the exit ready to leave when you are."
 
 --> END
 
