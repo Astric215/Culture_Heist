@@ -260,7 +260,7 @@ The boss pondered the statue layout for a second and then pointed at a staute of
 "This statue should create a neccesary distraction should something happen to it."
 
 {
--timer < Distraction_Created:
+-timer > Distraction_Created:
     "The museum patrons will likely be drifting from statue to statue observing each one."
 -timer == Distraction_Created:
     "You should be able to see Rico push over a statue. That will kick up quite the frenzy amongst the museum goers."
@@ -268,26 +268,9 @@ The boss pondered the statue layout for a second and then pointed at a staute of
     "Most museum patrons should be crowding the statue that Rico will have knocked over by this point. Any guards in the area will likely be dealing with that as well. This means that all eyes will be on that statue."
 }
 
-{
--timer < Distraction_Created:
-    {
-    -trait==Sneaky:
-    "Thanks to your small frame you should be able to crawl through the air vents and find your way to the Mailroom."
-        ->Mailroom
-    -else:
-    "Boss," {trait == Charismatic: Kai}{trait == Strong: Rico} chimes in, "There's absolutely no way I'll be able to fit through those vents. Maybe Jules could though?"
-    The leader knodded.
-    "All right then where were we..."
-        ->Side_Wing_2
-    }
--else:
-    " We are going to have to plan around that vent. There is certainly no way for you to get through it with all the museum patrons in the statue room. There is going to have to be some kind of distraction for you to slip in unnoticed."
-    ->Side_Wing_2
-}
-
 +[Enter the vents to the Mailroom]
 {
--timer < Distraction_Created:
+-timer <= Distraction_Created:
     {
     -trait==Sneaky:
     "Thanks to your small frame you should be able to crawl through the air vents and find your way to the Mailroom."
@@ -325,9 +308,9 @@ The boss pondered the statue layout for a second and then pointed at a staute of
 -(start)
 Temporary exhibitions often include objects that have been borrowed and will later be returned to their owner, calling for a mailroom that doubles as a shipping store. Most of the objects on display are from the museum’s own personal collections so usually those would just go back into storage, however objects that are specifically acquired for an exhibition may require curator perk and revealing the security movement would be equivalent to divulging trade secrets. Early museums were often founded as ways for wealthy collectors to show off what they had acquired to less fortunate people and help to “educate” them. And unfortunately, that still stands to this day. On the North end of the room is the door to the Loading Bay with a small mail slot next to it."
 
-*[Pick up disguises]
++{has_costume==false}[Pick up disguises]
 {
--Costumes_Dropped_Off < timer:
+-Costumes_Dropped_Off > timer:
     "Thanks to Kai, your fake ID and security guard uniform will have been placed, and will be ready to be put on"
     ~has_costume = true
         ->Mailroom
@@ -445,7 +428,7 @@ The Leader furrowed his brow and thought about Jules' comment.
 ==Vault_Hall==
 <-advance_time
 -(start)
-"By this point you will have finally found a way into the hallway to the safe But your work isn't done here!"
+"By this point you will have finally found a way into the hallway to the safe But your work isn't done here! This hallway is filled with security cameras so you are going to have some issue moving through the area without being caught."
 
 { 
     - Cameras_Off > timer:
@@ -480,7 +463,7 @@ The Leader furrowed his brow and thought about Jules' comment.
         "By this point in time Rico will have already turned off the security so the security light should be off."
 }
 +{Security_Off <= timer}[Open the Vault]
-    "You've finally done it. You're hands touch the artifact..."
+    "At that point you will have finally done it. You're hands will touch the artifact and you will be able to get it out of there."
     ->Closing
     
 +[Check watch]
@@ -495,13 +478,12 @@ The leader tapped a door on the map.
 "This door is typically locked to prevent traffic between the museum staff halls and the loading bay so it will need to be unlocked for us."
 The leader tapped the loading bay on the map.
 "This is where you will meet up for your getaway."
-+{has_car && Car_Arrived > timer} [Park car in the loading bay]
+{Car_Arrived > timer: "There will be a red sports car parked near the exit ready to leave when you are."}
+
++{has_car && Car_Arrived < timer} [Park car in the loading bay]
+    "You are going to leave the car there so all of you can use it later."
     ~Car_Arrived = timer
-{
--Car_Arrived > timer:
-    "There will be a red sports car parked near the exit ready to leave when you are."
-//-else://write another else thing here
-}
+    ->Loading_Bay
 
 +{Staff_Door_Unlocked < timer} [Unlock the staff door]
     ~Staff_Door_Unlocked = timer
@@ -511,6 +493,7 @@ The leader tapped the loading bay on the map.
 {
 -Staff_Door_Unlocked < timer:
     "Hmmmmm. The door will still be locked by that point so we cant have you going through yet."
+    ->Loading_Bay
 -trait == Charismatic:
     "Kai, we don't need you to go into the museum hallways themselves so it is a better idea for you to wait and get ready to driver the others out."
     Kai quickly nodded their head.
@@ -522,6 +505,8 @@ The leader tapped the loading bay on the map.
 
 +{has_costume}[Drop off the guard disguise]
     "You are going to slip the guard disguise into the mailslot for Rico to pick up."
+    ~has_costume = false
+    ~Costumes_Dropped_Off = timer
     ->Loading_Bay
 "You'll then enter a huge warehouse with rows and rows of wooden crates and packing materials scattered about the floor."
 +[Wait for the others and Escape]
