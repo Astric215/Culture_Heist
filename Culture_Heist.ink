@@ -65,7 +65,7 @@ The leader tapped on the map of the museum.
 +[Go to the museum]
 -> Outside
 
-+[Go to the back of the museum]
++[Go to the back of the museum] //only if you are the driver
 -> Loading_Bay
 
 
@@ -97,9 +97,15 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 "Gary runs a business that makes him a lot of money, and he certainly doesn't do it by selling brand new cars if you know what I mean." 
 "If you can convince him our cause is worth it, he should be willing to give you a car with a less than legal history."
 
-+[Ask to buy a stolen car] //Only if you are the driver
++[Ask to buy a stolen car]
+{
+-trait==Charismatic:
 "With your charisma, that should be a piece of cake."
     ->Car_Dealership
+-else:
+"You won't need a second getaway vehicle, and even if you did there's no way you'd be able to convince him to give you another car. So back to the car dealership..."
+    ->Car_Dealership
+}
 
 +[Go to the museum]
     ->Outside
@@ -107,15 +113,31 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 +[Go to the Costume shop]
  ->Costume_Store
  
-+[Go to the back of the museum] //Only if you are the driver
++[Go to the back of the museum]
+{
+-trait==Charismatic:
+"You should be able to easily convince the guard out front that you're allowed to go back there."
     ->Loading_Bay
+-else:
+"You won't be able to get to the loading bay withought Kai's charisma."
+    ->Car_Dealership
+}
 
 ==Costume_Store==
-"When you enter the costume store you'll likely be greeted by Burt, the store manager. Although it may look like a normal costume shop, you may be able to sneak a peak behind Burts desk and see real police badges or forged signatures on several political documents."
+"When you enter the costume store you'll likely be greeted by Burt, the store manager."
+"Around the room you'll find your typical vampire fangs and devil horns, along with those horribly cheap couples mustard and ketchup costumes.
+"But look hard enough and you may be able to sneak a peak behind Burts desk and see real police badges or forged signatures on several political documents."
+"Burt is an interesting fellow. Tall, lanky, and not fast to trust new people. This may seem difficult to work with, but it's also why his side business is still in operation."
 
 +[Acquire Security guard uniforms] //Only if you are the Driver
-"
+{
+-trait==Charismatic:
+"You should have no problem walking right up to Burt, convincing him to give you guard uniforms and forged ID's, and waltzing right back out in no time." 
     ->Costume_Store
+-else:
+"Thankfully Kai has already used their charm to gain the trust of Burt, so you won't need to get another set of security guard uniforms. Just pick them up from the mailroom where they dropped them off. So, you're in the costume store..."
+    ->Costume_Store
+}
 
 +[Go to the museum]
     ->Outside
@@ -124,7 +146,14 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
     ->Car_Dealership
     
 +[Go to the back of the museum] //only if you are the driver
+{
+-trait==Charismatic:
+"You should be able to easily convince the guard out front that you're allowed to go back there."
     ->Loading_Bay
+-else:
+"You won't be able to get to the loading bay withought Kai's charisma."
+    ->Costume_Store
+}
 
 
 ==Outside==
@@ -146,6 +175,7 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 ==Museum_Entryway==
 "The entryway will be the easiest room to blend into due to the large number of museum-goers walking around and buying their tickets at the front desk." 
 "There will likely be several groups of children incessantly blabbing about how they see boobies in every painting, or how 'Mindy's little brother keeps pulling on my hair.' So no need to worry about making too much noise either. The public's attention certainly won't be on you."
+Recently, the museum announced its busiest year yet and the sudden influx can be attributed to the highly successful exhibitions. Averaging approximately over 30,000 visitors a day, the museum staff has been forced to close the exhibits for a day or two to meet about crowding and overworking conditions. Unlike the envisioned air-conditioned refuge you would imagine, the museum with its overcrowding gets uncomfortably warm and you can see countless numbers of visitors fanning themselves with maps and brochures as they race to find water fountains and seats.
 
 +[Go to the Main Hall]
     ->Main_Hall
@@ -186,7 +216,8 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
     ->Main_Hall
 
 ==Side_Wing_2==
-"This wing of the museum is where the majority of the statues are displayed. Although most of the museum makes me shake my head, the statue room is weirdly comforting to me. Maybe it has something to do with my love of marble. Anyways, the only important thing to note is the small vent on the north east end of the room.
+"This wing of the museum is where the majority of the statues are displayed. Although most of the museum makes me shake my head, the statue room is weirdly comforting to me. Maybe it has something to do with my love of marble. Anyways the only important thing to note is the small vent on the north east end of the room.
+Set up like a temple, the wing was decorated with sculptures that depicted scenes from mythology and cult, while the walls were constructed of gold and ivory. Some of these statues have been on permanent display for decades and on either end of the room you can see transepts. Even the walls are carved metopes. While it is universally recognized that the best seen and conserved sculptures are those that exist in museums, some of these pieces of art are symbols of power and of ancient pasts where the collection of antiquities have been transported outside of their respective countries.
 
 +[Enter the vents to the Mailroom]
 {
