@@ -72,6 +72,7 @@ The leader tapped on the map of the museum.
 
 //locations go below here
 ==Secret_Base==
+-(start)
 The leader looked around the dark damp walls of the Secret base.
 "You already know this place well obviously. Too bad we will have to be leaving it soon"
 The leader sighed wistfully.
@@ -83,15 +84,12 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 ->Travel
 
 +[Check watch]
-    -(postscript)
-        -> timer_text(-> done)
-    -(done)
-    -> Secret_Base //this needs to be different
-
+    -> timer_text(-> start)
 
 ->END
 
 ==Car_Dealership==
+-(start)
 "You'll then go ahead and enter the car dealership. When you get there you'll notice several very expensive brands of cars parked out in front."
 "The dealer, Gary, should be waiting inside. You'll be able to tell its him by his bushy red goatee."
 "Gary runs a business that makes him a lot of money, and he certainly doesn't do it by selling brand new cars if you know what I mean." 
@@ -123,7 +121,11 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
     ->Car_Dealership
 }
 
++[Check watch]
+    -> timer_text(-> start)
+    
 ==Costume_Store==
+-(start)
 "When you enter the costume store you'll likely be greeted by Burt, the store manager."
 "Around the room you'll find your typical vampire fangs and devil horns, along with those horribly cheap couples mustard and ketchup costumes.
 "But look hard enough and you may be able to sneak a peak behind Burts desk and see real police badges or forged signatures on several political documents."
@@ -155,8 +157,11 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
     ->Costume_Store
 }
 
++[Check watch]
+    -> timer_text(-> start)
 
 ==Outside==
+-(start)
 "Once you're outside the museum, you'll be able to see the two giant doors leading to the museum's front hall." 
 "The museum also received a large grant recently, so you'll see the cheesy bushes shaped like famous statues out there as well."
 
@@ -171,8 +176,12 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
  
 +[Go to the back of the museum] //Only if you are the driver
     ->Loading_Bay
+    
++[Check watch]
+    -> timer_text(-> start)
 
 ==Museum_Entryway==
+-(start)
 "The entryway will be the easiest room to blend into due to the large number of museum-goers walking around and buying their tickets at the front desk." 
 "There will likely be several groups of children incessantly blabbing about how they see boobies in every painting, or how 'Mindy's little brother keeps pulling on my hair.' So no need to worry about making too much noise either. The public's attention certainly won't be on you."
 Recently, the museum announced its busiest year yet and the sudden influx can be attributed to the highly successful exhibitions. Averaging approximately over 30,000 visitors a day, the museum staff has been forced to close the exhibits for a day or two to meet about crowding and overworking conditions. Unlike the envisioned air-conditioned refuge you would imagine, the museum with its overcrowding gets uncomfortably warm and you can see countless numbers of visitors fanning themselves with maps and brochures as they race to find water fountains and seats.
@@ -182,8 +191,12 @@ Recently, the museum announced its busiest year yet and the sudden influx can be
 
 +[Exit the museum]
     ->Outside
+    
++[Check watch]
+    -> timer_text(-> start)
 
 ==Main_Hall==
+-(start)
 "This is where all of the less expensive artifacts are kept for public viewing."
 "Against the eastern wall will be display cases filled with smaller pieces such as jewelry or fancy cutlery."
 "Although they're displayed elegantly and locked up tight, most of these pieces are shitty replicas made with fake jewels. Even so, you'll still find people gawking at their beauty talking about how 'fascinating' and 'unique' they are."
@@ -196,8 +209,12 @@ Recently, the museum announced its busiest year yet and the sudden influx can be
     
 +[Go to Entryway]
     ->Museum_Entryway
+    
++[Check watch]
+    -> timer_text(-> start)
 
 ==Side_Wing_1==
+-(start)
 "Probably the least exciting room of the museum, the art gallery is lined with benches in the center facing outwards towards the walls."
 "The guards don't patrol this room as much as the others since it's usually just filled with old people taking a rest while their families leave them behind to rot alone."
 "The only thing of value for us to note is the large metal gate on the northern end of the room that leads to the staff hallways." The museum staff opens that gate electronically to get artifacts out onto the museum floor. The gate itself is rather heavy.
@@ -214,8 +231,12 @@ Recently, the museum announced its busiest year yet and the sudden influx can be
 
 +[Go to the Main Hall]
     ->Main_Hall
+    
++[Check watch]
+    -> timer_text(-> start)
 
 ==Side_Wing_2==
+-(start)
 "This wing of the museum is where the majority of the statues are displayed. Although most of the museum makes me shake my head, the statue room is weirdly comforting to me. Maybe it has something to do with my love of marble. Anyways the only important thing to note is the small vent on the north east end of the room.
 Set up like a temple, the wing was decorated with sculptures that depicted scenes from mythology and cult, while the walls were constructed of gold and ivory. Some of these statues have been on permanent display for decades and on either end of the room you can see transepts. Even the walls are carved metopes. While it is universally recognized that the best seen and conserved sculptures are those that exist in museums, some of these pieces of art are symbols of power and of ancient pasts where the collection of antiquities have been transported outside of their respective countries.
 
@@ -233,7 +254,11 @@ Set up like a temple, the wing was decorated with sculptures that depicted scene
 +[Go to the Main Hall]
     ->Main_Hall
     
++[Check watch]
+    -> timer_text(-> start)
+    
 ==Mailroom==
+-(start)
 "This is the mailroom where exhibits are shipped off and others are held before going on display. On the South end of the room is the door to the Loading Bay with a small mail slot next to it."
 
 *[Pick up disguises]
@@ -257,7 +282,11 @@ TODO: Add pick up disguise knot and knot for if the disguise has already been pi
 +[Enter Loading Bay]
 ->Loading_Bay
 
++[Check watch]
+    -> timer_text(-> start)
+
 ==Guard_Hall==
+-(start)
 "There is a bit of a crossroads in the staff hallways. One of the halls will go north towards the Security room. The western hall will take you towards the vault. This hallway is a bit tricky though since in it locked off with a security door that can only be opened with a keycard that every guard carries. Finally the eastern hall will take you straight to the museum mail room. Since most traffic goes through this area, there should be a guard positioned there." 
 The leader tapped the crossing corridors on the map. There is also a large metal gate here that goes out onto the museum floor. The gate is quite heavy. Anyways, back to the guard." 
 { 
@@ -332,29 +361,44 @@ The Leader furrowed his brow and thought about Jules' comment.
     ~has_keycard = true
     ->Guard_Hall
 }
+
++[Check watch]
+    -> timer_text(-> start)
     
 
 ==Vault_Hall==
+-(start)
 "By this point you will have finally found a way into the room with the safe But your work isn't done here!"
 
 +[Open Vault]
 
++[Check watch]
+    -> timer_text(-> start)
+
 --> END
 
 ==Loading_Bay==
+-(start)
 //Option 1 for when the getaway car is NOT set up 
 "You'll then enter a huge warehouse with rows and rows of wooden crates and packing materials scattered about the floor."
 
 //Option 2 for when the getaway car is set up
 "You'll then enter a huge warehouse with rows and rows of wooden crates and packing materials scattered about the floor. There's a red sports car near the exit ready to leave when you are."
 
++[Check watch]
+    -> timer_text(-> start)
+
 ->END
 
 ==Security_Room==
+-(start)
 "When you enter the Security Room you'll see computer screens lining the walls. To your left will be the button you'll have to press to turn off the motion sensors around the vault. Thankfully, you've already picked up your security guard uniform so being spotted won't be a problem."
 
 +[Exit the Security Room]
     ->Guard_Hall
+    
++[Check watch]
+    -> timer_text(-> start)
 
 //the below nodes handle the meta conversation where the leader describes
 //the plan or objections are raised to it. The format is Start, objects, End
