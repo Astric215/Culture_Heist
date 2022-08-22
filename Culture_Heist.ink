@@ -59,8 +59,17 @@ The leader tapped on the map of the museum.
 
 ==Travel==
 
-*"Go to the car dealership"
++"Go to the car dealership"
 -> Driver_End
+
++Go to the museum
+-> Outside
+
++[Go to the back of the museum]
+-> Loading_Bay
+
+
+
 //locations go below here
 ==Secret_Base==
 The leader looked around the dark damp walls of the Secret base.
