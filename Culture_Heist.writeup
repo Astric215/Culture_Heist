@@ -1,24 +1,64 @@
-Culture Heist
-Group 09 
-David Diaz, Marlene Lopez, Patrick Queiroz
-link to github: https://github.com/Astric215/Culture_Heist ​ 
+Game Title: Culture Heist
+Group Number: 09 
+Group Members: David Diaz, Marlene Lopez, Patrick Queiroz
+link to github: https://github.com/Astric215/Culture_Heist
 
  == Experience Goal == 
-The player is part of a team motivated to retrieve an object of immense power because those the player is stealing from wish to use the object in a way that they would disagree with the player, allowing the player to play with the idea of morality.
-Players will experience a sense of adventure which will be fulfilled through the exploration of the game’s environment. Players will also have to use their reasoning and comprehension skills to formulate a high stakes robbery in order to reach the next area in ‘levels’. 
-The player should feel proud over their mastery of how the heist will go. The main emotional goal is this feeling of pride of mastery over the state of the game world. In addition, the player experience should also include feeling the need to work with coordination to succeed, and this kind of collaboration is meant to evoke feelings of building community and strengthening team effectiveness.
-Our goal was to split the project into pieces where the two artists could write the dialogue on their own and then incorporate that dialogue into the code. However, we quickly realized that making the dialogue completely separate from the code made it difficult to playtest without a serious sense of organization.
+The player is part of a team motivated to retrieve an object of immense power because those the player 
+is stealing from wish to use the object in a way that they would disagree with the player, allowing the 
+player to play with the idea of morality.
+Players will experience a sense of adventure which will be fulfilled through the exploration of the 
+game’s environment. Players will also have to use their reasoning and comprehension skills to formulate 
+a high stakes robbery in order to reach the next area in ‘levels’. 
+The player should feel proud over their mastery of how the heist will go. The main emotional goal is 
+this feeling of pride of mastery over the state of the game world. In addition, the player experience 
+should also include feeling the need to work with coordination to succeed, and this kind of collaboration 
+is meant to evoke feelings of building community and strengthening team effectiveness.
+Our goal was to split the project into pieces where the two artists could write the dialogue on their own 
+and then incorporate that dialogue into the code. However, we quickly realized that making the dialogue 
+completely separate from the code made it difficult to playtest without a serious sense of organization.
 
 == Narrative Stance and Rationale == 
-Our story has 3 focalizers that shift throughout the story. Most of the story is told in second person by a narrator who is describing the actions his team will be completing in their mission. However, the narrator will often be interrupted while describing this plan which shifts the story into third person. This style of narration helps highlight our experience goals which were to provoke collaboration and team building by giving each character the opportunity to show off their unique skills in their team while simultaneously allowing for environmental exploring and worldbuilding. Our story attempts to combine the creative aspects of combing and constructing with reasoning, interpreting, and comprehending by describing how the player interacts with unfulfilled tasks in a way to progress successfully with the plan to steal back the artifact as well as overcome certain obstacles.
+Our story has 3 focalizers that shift throughout the story. Most of the story is told in second person by 
+a narrator who is describing the actions his team will be completing in their mission. However, the narrator 
+will often be interrupted while describing this plan which shifts the story into third person. This style of 
+narration helps highlight our experience goals which were to provoke collaboration and team building by 
+giving each character the opportunity to show off their unique skills in their team while simultaneously 
+allowing for environmental exploring and worldbuilding. Our story attempts to combine the creative aspects 
+of combing and constructing with reasoning, interpreting, and comprehending by describing how the player 
+interacts with unfulfilled tasks in a way to progress successfully with the plan to steal back the artifact 
+as well as overcome certain obstacles.
 
 == Story Structure (graphs) == 
-The main storylet design pattern is the gauntlet but the game employs branching and bottlenecking to control different parts of the heist. The characters are allowed to explore an area fully but are forced to move on when they run out of time.
-The story structure consists of three consecutive storylets where the characters are tasked with respective responsibilities and character traits that allow them to fulfill their duties on the team. For example, there is the driver, the recon, and the thief. The driver is in charge of securing the costumes and a getaway vehicle because they are the most persuasive so while the rest of the team proceeds with the plan to retrieve the artifact, the driver is in the loading bay with the car waiting to unlock the staff door for others for their quick escape. The recon on the other hand is strong and can fight guards but they cannot fit through small spaces so they are tasked with creating a distraction and defeating security measures while they escape to the vehicle while the thief who goes in last sneaks through the vents and disguises themselves to unlock vault hall with a stolen keycard to take the artifact and escape with it. All of these tasks are essential to the progression of the story so should the player fail to complete them, the heist will not be successful.
+The main storylet design pattern is the gauntlet but the game employs branching and bottlenecking to control 
+different parts of the heist. The characters are allowed to explore an area fully but are forced to move on 
+when they run out of time.
+The story structure consists of three consecutive storylets where the characters are tasked with respective 
+responsibilities and character traits that allow them to fulfill their duties on the team. For example, there 
+is the driver, the recon, and the thief. The driver is in charge of securing the costumes and a getaway 
+vehicle because they are the most persuasive so while the rest of the team proceeds with the plan to retrieve 
+the artifact, the driver is in the loading bay with the car waiting to unlock the staff door for others for 
+their quick escape. The recon on the other hand is strong and can fight guards but they cannot fit through 
+small spaces so they are tasked with creating a distraction and defeating security measures while they escape 
+to the vehicle while the thief who goes in last sneaks through the vents and disguises themselves to unlock 
+vault hall with a stolen keycard to take the artifact and escape with it. All of these tasks are essential 
+to the progression of the story so should the player fail to complete them, the heist will not be successful.
 
 == Key Ink Variables / State Tracking ==
 The Key Ink variables used in the code range from character tracking to progression tracking.
-The list used for tracking character traits is LIST trait = (Nothing), Charismatic, Strong, Sneaky. This is to ensure that when completing a task, the task is dependent on a character and only a certain teamplayer is able to complete it. This means that for example, the recon would not be able to retrieve the artifact themselves on the basis that they are big and ‘strong’ and cannot fit through small spaces whereas the thief is smaller and ‘sneakier’ so they could travel through vents and use a disguise to not get caught. The variables used for tracking subplot progress were VAR timer = 0, VAR timer_default = 30, VAR has_costume = false, VAR has_car = false, VAR has_keycard = false, VAR next_end = ->introduction. These are important tasks that must be completed in order to proceed to the next one. Therefore, if the player runs out of time or they do not acquire all of the items needed to execute the heist, the plan falls through and the player must start over and reevaluate what went wrong and what tool they need that they did not have. The variables used for tracking preparation actions are VAR Car_Arrived = 0, VAR Costumes_Dropped_Off = 0, VAR Staff_Door_Unlocked = 0, VAR Distraction_Created = 0, VAR Guard_Knocked_Out = 0, VAR Cameras_Off = 0, VAR Security_Off = 0. These variables are altered to indicate the task has been completed and the player can proceed.
+The list used for tracking character traits is LIST trait = (Nothing), Charismatic, Strong, Sneaky. This is to 
+ensure that when completing a task, the task is dependent on a character and only a certain teamplayer is able 
+to complete it. This means that for example, the recon would not be able to retrieve the artifact themselves 
+on the basis that they are big and ‘strong’ and cannot fit through small spaces whereas the thief is smaller 
+and ‘sneakier’ so they could travel through vents and use a disguise to not get caught. The variables used for 
+tracking subplot progress were VAR timer = 0, VAR timer_default = 30, VAR has_costume = false, VAR has_car = false, 
+VAR has_keycard = false, VAR next_end = ->introduction. These are important tasks that must be completed in order 
+to proceed to the next one. Therefore, if the player runs out of time or they do not acquire all of the items 
+needed to execute the heist, the plan falls through and the player must start over and reevaluate what went wrong 
+and what tool they need that they did not have. The variables used for tracking preparation actions are 
+VAR Car_Arrived = 0, VAR Costumes_Dropped_Off = 0, VAR Staff_Door_Unlocked = 0, VAR Distraction_Created = 0, 
+VAR Guard_Knocked_Out = 0, VAR Cameras_Off = 0, VAR Security_Off = 0. These variables are altered to indicate the 
+task has been completed and the player can proceed.
 
 == Ink affordances: Text/Code ==
 "So, here is the plan." 
@@ -35,13 +75,35 @@ The leader tapped on the map of the museum.
 * [No] "Well too bad. We only have so much time." 
 -> Driver_Start
 
-In the narrative, we used a timer variable to add temporal locality to characters and to control how a player advances to the next step in the game. This means we created an obstruction, something that will stop the player from being able to progress, and the gameplay is the process of finding a means to dissolve the obstruction. Once the player finds the means, the player has already received everything that is required to dissolve the obstruction and can continue. When a character tries to complete a task that is not respective to their unique trait, it creates a sort of locked door which is a real affordance that denies the player the ability to progress until the associated tasks have been successfully cleared in an almost puzzle-like manner. Each task is like a challenge with a single locked door. These puzzle-like tasks are the key to moving forward, and they require interaction with real affordances to be completed.
+In the narrative, we used a timer variable to add temporal locality to characters and to control how a player 
+advances to the next step in the game. This means we created an obstruction, something that will stop the player 
+from being able to progress, and the gameplay is the process of finding a means to dissolve the obstruction. 
+Once the player finds the means, the player has already received everything that is required to dissolve the 
+obstruction and can continue. When a character tries to complete a task that is not respective to their unique 
+trait, it creates a sort of locked door which is a real affordance that denies the player the ability to progress 
+until the associated tasks have been successfully cleared in an almost puzzle-like manner. Each task is like a 
+challenge with a single locked door. These puzzle-like tasks are the key to moving forward, and they require 
+interaction with real affordances to be completed.
 
 == Discourse Example/Demonstration == 
 
-In the example as shown on our presentation, the exchange shows how coordinated work and community as a theme are invoked in our writing. Players must use each character to complete a series of tasks to set up the next character for success and ultimately create a flawless plan for the heist. Player is able to choose which part of the heist plan they want to tackle. This shapes how players approach specific actions as they are presented by the leader. In the example above, players may choose to travel to specific locations with unique tasks, and the next character can see the changes previous characters made so as the plan is formed they may object to an action due to previous inaction.
+In the example as shown on our presentation, the exchange shows how coordinated work and community as a theme
+are invoked in our writing. Players must use each character to complete a series of tasks to set up the next 
+character for success and ultimately create a flawless plan for the heist. Player is able to choose which part
+of the heist plan they want to tackle. This shapes how players approach specific actions as they are presented 
+by the leader. In the example above, players may choose to travel to specific locations with unique tasks, and 
+the next character can see the changes previous characters made so as the plan is formed they may object to an 
+action due to previous inaction.
 
 == Something Cool ==
-An interesting aspect of the story that left a deep impression was the creation of a timer. By building a timer, the narrative was made to feel more time sensitive and the player experiences were heightened to evoke the need to combine meticulousness, cunning, and audacity that usually comes from high stakes robbery. The timer element made it so the player is able to experience all of this under pressure because should they not complete the tasks within the allotted time, then they risk failing and having to start all over. Player experiences a range of methods and a diversity of criminal methods replicating real sophisticated and high-value heists such as the feeling of defeating security measures, using deception methods through the use of costumes, timing and target selection, resources and risk acceptance, and failures and mistakes. This is all while simultaneously emphasizing the need for community and cooperative team building.
+An interesting aspect of the story that left a deep impression was the creation of a timer. By building a timer, 
+the narrative was made to feel more time sensitive and the player experiences were heightened to evoke the need 
+to combine meticulousness, cunning, and audacity that usually comes from high stakes robbery. The timer element 
+made it so the player is able to experience all of this under pressure because should they not complete the tasks 
+within the allotted time, then they risk failing and having to start all over. Player experiences a range of methods 
+and a diversity of criminal methods replicating real sophisticated and high-value heists such as the feeling of 
+defeating security measures, using deception methods through the use of costumes, timing and target selection, 
+resources and risk acceptance, and failures and mistakes. This is all while simultaneously emphasizing the need for 
+community and cooperative team building.
 
 == Resources used ==
