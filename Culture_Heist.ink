@@ -326,9 +326,9 @@ The leader looked at Kai without moving his head. He then repositioned his body 
 
 == Driver_End ==
 " Okay so that is the plan for Kai. Any objections?"
-{Car_Arrived == 0: ->Car_not_present}
+/*{Car_Arrived == 0: ->Car_not_present}
 {Costumes_Dropped_Off == 0: ->Costumes_not_dropped}
-{Staff_Door_Unlocked == 0: ->Door_not_open}
+{Staff_Door_Unlocked == 0: ->Door_not_open}*/
 "Good"
 ~ next_character()
 -> Recon_Start
