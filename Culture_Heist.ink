@@ -113,10 +113,13 @@ TODO: add location nodes -Marlene and Patrick
     ->Loading_Bay
 
 ==Costume_Store==
-"When you enter the costume store you'll likely be greeted by Burt, the store manager. Although it may look like a normal costume shop, you may be able to sneak a peak behind Burts desk and see real police badges or forged signatures on several political documents."
+"When you enter the costume store you'll likely be greeted by Burt, the store manager."
+"Around the room you'll find your typical vampire fangs and devil horns, along with those horribly cheap couples mustard and ketchup costumes.
+"But look hard enough and you may be able to sneak a peak behind Burts desk and see real police badges or forged signatures on several political documents."
+"Burt is an interesting fellow. Tall, lanky, and not fast to trust new people. This may seem difficult to work with, but it's also why his side business is still in operation."
 
 +[Acquire Security guard uniforms] //Only if you are the Driver
-"
+"You should have no problem walking right up to Burt, convincing him to give you guard uniforms and forged ID's, and waltzing right back out in no time." 
     ->Costume_Store
 
 +[Go to the museum]
