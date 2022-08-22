@@ -124,6 +124,7 @@ As you enter the costume store you'll likely be greeted by Burt, the store manag
 +[Enter Guard Hall] "That's where you come in and use those muscles to lift the giant metal gate blocking the entrance to the Guard Hall. Unfortunately it will shut behind you once you crawl under, but you can deal with that again if you need to."  
     ->Guard_Hall
 TODO: Make a knot for when you can't enter
+//"Unfortunately you're not as strong as Rico, so you won't be able to do that."
 
 +[Go to the Main Hall]
     ->Main_Hall
@@ -134,6 +135,7 @@ TODO: Make a knot for when you can't enter
 +[Enter vents to Mailroom] "Thanks to your small frame you should be able to crawl through the air vents and find your way to the Mailroom.
     ->Mailroom
 TODO: Make a knot for when you can't enter
+//"Boss," {trait == Charismatic: Kai}{trait == Strong: Rico} chimes in, "There's absolutely no way I'll be able to fit through those vents. Maybe Jules could though?"
 
 +[Go to the Main Hall]
     ->Main_Hall
@@ -142,7 +144,7 @@ TODO: Make a knot for when you can't enter
 "This is the mailroom where exhibits are shipped off and others are held before going on display. On the South end of the room is the door to the Loading Bay with a small mail slot next to it."
 
 *[Pick up disguises]
-TODO: Add pick up disguise knot and knot for if he diguise has already been picked up.
+TODO: Add pick up disguise knot and knot for if the diguise has already been picked up.
     
 +[Enter Guard Hall]
     ->Guard_Hall
@@ -150,6 +152,8 @@ TODO: Add pick up disguise knot and knot for if he diguise has already been pick
 +[Enter Vents to Side Hall 2]
     ->Side_Wing_2
 TODO: Make a knot for when you can't enter
+//"Boss," {trait == Charismatic: Kai}{trait == Strong: Rico} chimes in, "There's absolutely no way I'll be able to fit through those vents. Maybe Jules could though?"
+
     
 +[Enter Loading Bay]
 ->Loading_Bay
@@ -167,10 +171,12 @@ TODO: I had a hard time coming up with a description because of how many states 
 +[Go to Vault Hall]
     ->Vault_Hall
 TODO: Make a knot for when you can't enter because you don't have the keycard
+//{trait == Strong: Rico}{trait == Sneaky: Jules} stops the boss "Wait wait wait, I'm gonna need a keycard to get in there first. Maybe one of the guards in this room will have one on them."
 
-+[Go to Side Hall 1]
++[Go to Side Hall 1] You'll just go ahead and lift that gate open one more time and head to the art gallery.
     ->Side_Wing_1
 TODO: Make a knot for when you can't enter
+//"Unfortunately you're not as strong as Rico, so you won't be able to do that."
 
 ==Vault_Hall==
 "By this point you will have finally found a way into the room with the safe But your work isn't done here!"
