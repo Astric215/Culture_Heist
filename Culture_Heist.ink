@@ -367,7 +367,7 @@ Temporary exhibitions often include objects that have been borrowed and will lat
 "There is a bit of a crossroads in the staff hallways. One of the halls will go north towards the Security room. The western hall will take you towards the vault. This hallway is a bit tricky though since in it locked off with a security door that can only be opened with a keycard that every guard carries. Finally the eastern hall will take you straight to the museum mail room. Since most traffic goes through this area, there should be a guard positioned there." 
 The leader tapped the crossing corridors on the map. There is also a large metal gate here that goes out onto the museum floor. The gate is quite heavy. Anyways, back to the guard." 
 { 
-    - Guard_Knocked_Out == 0:
+    - Guard_Knocked_Out < timer:
     "The guard should be standing directly in the center of the crossroads."
     - Guard_Knocked_Out == timer:
         "You will get there just in time to see Rico knock out the guard."
@@ -469,12 +469,23 @@ The Leader furrowed his brow and thought about Jules' comment.
     -> timer_text(-> start)
 
 ==Vault==
-
-[Open the Vault]
-"You've finally done it. You're hands touch the artifact..."
-
-->Closing
-
+<-advance_time
+-(start)
+{ 
+    - Security_Off < timer:
+    "There should be a blinking light that indicates that the vault security is on. You will have to wait for it to be off to open the vault."
+    - Security_Off == timer:
+        "You should see the light for the vault security turn off."
+    - timer < Security_Off:
+        "By this point in time Rico will have already turned off the security so the security light should be off."
+}
++{Security_Off <= timer}[Open the Vault]
+    "You've finally done it. You're hands touch the artifact..."
+    ->Closing
+    
++[Check watch]
+    -> timer_text(-> start)
+    
 ==Loading_Bay==
 <-advance_time
 -(start)
@@ -526,9 +537,14 @@ The leader tapped the loading bay on the map.
 -(start)
 "When you enter the Security Room you'll see computer screens lining the walls. To your left will be the button you'll have to press to turn off the motion sensors and cameras around the vault. Thankfully, you've already picked up your security guard uniform so being spotted won't be a problem."
 
-+[Turn off the cameras and Vault security]
-    "You will have to inconspicuously walk up to the camera controls and stop their recording. Once that is done then Jules should be able to approach the vault. This will also allow Jules to remove the artifact from its secure container."
++{Cameras_Off < timer}[Turn off the cameras]
+    "You will have to inconspicuously walk up to the camera controls and stop their recording. Once that is done then Jules should be able to approach the vault."
     ~Cameras_Off = timer
+    ->Security_Room
+    
++{Security_Off < timer}[Turn off the Vault Security]
+    "You will have to walk towards the artifact security controls and shut off the motion sensors in the vault. Onece that is done Jules should be able to retrieve the artifact."
+    ~Security_Off = timer
     ->Security_Room
     
 +[Exit the Security Room]
@@ -596,9 +612,9 @@ The leader looked at Kai without moving his head. He then repositioned his body 
 
 == Driver_End ==
 " Okay so that is the plan for Kai. Any objections?"
-/*{Car_Arrived == 0: ->Car_not_present}
+{Car_Arrived == 0: ->Car_not_present}
 {Costumes_Dropped_Off == 0: ->Costumes_not_dropped}
-{Staff_Door_Unlocked == 0: ->Door_not_open}*/
+{Staff_Door_Unlocked == 0: ->Door_not_open}
 "Good"
 ~ next_character()
 -> Recon_Start
@@ -653,6 +669,10 @@ Rico nodded "Okay, I can do that."
 
 ==Recon_End==
 "Any objections with Rico's part of the plan?"
+{Distraction_Created == 0: ->Distraction_not_created}
+{Guard_Knocked_Out == 0: ->Guard_not_unconcious}
+{Cameras_Off == 0: ->Cameras_not_off}
+{Security_Off == 0: ->Security_not_off}
 "Ok, moving on"
 ~ next_character()
 -> Thief_Start
