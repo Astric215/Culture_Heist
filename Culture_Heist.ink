@@ -71,12 +71,14 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 "Okay {trait == Charismatic: Kai}{trait == Strong: Rico}{trait == Sneaky: Jules}. Here is the first thing you are going to do."
 
 +[Leave the Base]"You are going to head out that door over there."
+->Travel
+
 +[Check watch]
     -(postscript)
         -> timer_text(-> done)
     -(done)
     -> Secret_Base //this needs to be different
-->Travel
+
 
 ->END
 
@@ -121,13 +123,15 @@ As you enter the costume store you'll likely be greeted by Burt, the store manag
 "The guards don't patrol this room as much as the others since it's usually just filled with old people taking a rest while their families leave them behind to rot alone."
 "The only thing of value for us to note is the large metal gate on the northern end of the room that leads to the guard hall."
 
-+[Enter Guard Hall] "That's where you come in and use those muscles to lift the giant metal gate blocking the entrance to the Guard Hall. Unfortunately it will shut behind you once you crawl under, but you can deal with that again if you need to."  
++[Go through metal gate] 
+{
+-trait==Strong:
+"That's where you come in and use those muscles to lift the giant metal gate blocking the entrance to the Guard Hall. Unfortunately it will shut behind you once you crawl under, but you can deal with that again if you need to." 
     ->Guard_Hall
-TODO: Make a knot for when you can't enter
-//"Unfortunately you're not as strong as Rico, so you won't be able to do that."
-
-+[Go to the Main Hall]
-    ->Main_Hall
+-else:
+"You wont be able to lift that".
+    ->Side_Wing_1
+}
 
 ==Side_Wing_2==
 "This wing of the museum is where the majority of the statues are displayed. Although most of the museum makes me shake my head, the statue room is weirdly comforting to me. Maybe it has something to do with my love of marble. Anyways the only important thing to note is the small vent on the north east end of the room.
