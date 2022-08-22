@@ -94,7 +94,14 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 TODO: add location nodes -Marlene and Patrick
 
 ==Car_Dealership==
-"peepee poopoo"
+"You'll then go ahead and enter the car dealership. When you get there you'll notice several very expensive brands of cars parked out in front."
+"The dealer, Gary, should be waiting inside. You'll be able to tell its him by his bushy red goatee."
+"Gary runs a business that makes him a lot of money, and he certainly doesn't do it by selling brand new cars if you know what I mean." 
+"If you can convince him our cause is worth it, he should be willing to give you a car with a less than legal history."
+
++[Ask to buy a stolen car] //Only if you are the driver
+"With your charisma, that should be a piece of cake."
+    ->Car_Dealership
 
 +[Go to the museum]
     ->Outside
@@ -106,7 +113,11 @@ TODO: add location nodes -Marlene and Patrick
     ->Loading_Bay
 
 ==Costume_Store==
-"As you enter the costume store you'll likely be greeted by Burt, the store manager. Although it may look like a normal costume shop, you may be able to sneak a peak behind Burts desk and see real police badges or forged signatures on several political documents."
+"When you enter the costume store you'll likely be greeted by Burt, the store manager. Although it may look like a normal costume shop, you may be able to sneak a peak behind Burts desk and see real police badges or forged signatures on several political documents."
+
++[Acquire Security guard uniforms] //Only if you are the Driver
+"
+    ->Costume_Store
 
 +[Go to the museum]
     ->Outside
