@@ -130,6 +130,7 @@ TODO: add location nodes -Marlene and Patrick
 
 
 ==Outside==
+At first glance, the museum’s exterior seems to be made up of limestone and cubed lights. The squared arches reveal many panes of glass that obscure the ability to look in or out, and with the roofline filled with camp guard towers, the building was like a fortress. Home to a world-renowned collection, this was a landmark building that claims it is a place that welcomes everyone. Collection highlights include the world’s largest and most important collection of works by Black, Indigenous, and Latin American artists and with their featured extraordinary period rooms, the museum invites visitors to see the arts in varied ways.
 "Once you're outside you'll be able to see the two giant doors leading to the museum's front hall." 
 "The museum also received a large grant recently, so you'll see the cheesy bushes shaped like famous statues out there as well."
 
