@@ -107,6 +107,7 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 {
 -trait==Charismatic:
 "With your charisma, that should be a piece of cake."
+“Just please make sure you don’t comment on his hair. I refuse to have a repeat of last time. He nearly took my head off when Ruth made a cheeky remark about how vibrant it looked and I swear I saw horns grow out of his head before he swung at me.”
     ~has_car = true
     ->Car_Dealership
 -else:
@@ -124,6 +125,7 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 {
 -trait==Charismatic:
 "You should be able to easily convince the guard out front that you're allowed to go back there."
+"Just a few tips, avoid making eye contact with people who might recognize you and remember to keep your head low and walk calmly and slowly. It is better to look as if you're busy and as if you're on your way somewhere in particular with something to do. Be inconspicuous."
     ->Loading_Bay
 -else:
 "You won't be able to get to the loading bay withought Kai's charisma."
@@ -137,6 +139,7 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 <-advance_time
 -(start)
 "When you enter the costume store you'll likely be greeted by Burt, the store manager."
+You might notice that he is a little…quirky. However, do not underestimate him. He owns a legitimate costume shop but before that he was an arms dealer who went to the far corners of the world buying and trading valuables. Governments were put on waiting lists to discuss weapon and disguise sales with him in the past. So in a way he is basically a corporate lobbyist without the corporation.
 "Around the room you'll find your typical vampire fangs and devil horns, along with those horribly cheap couples mustard and ketchup costumes.
 "But look hard enough and you may be able to sneak a peak behind Burts desk and see real police badges or forged signatures on several political documents."
 "Burt is an interesting fellow. Tall, lanky, and not fast to trust new people. This may seem difficult to work with, but it's also why his side business is still in operation."
@@ -162,6 +165,7 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 {
 -trait==Charismatic:
 "You should be able to easily convince the guard out front that you're allowed to go back there."
+Just remember to know when to make your moves. This is something we learn from a young age.The trick is to actively maintain an awareness and have your eyes constantly scanning for an opportunity. I would tell you to consider doing things like mimicking postures, gestures, and movements because it would help get someone to like you or agree with you. But I think you, more than anybody, are aware of this and do it well. Keep doing that.
     ->Loading_Bay
 -else:
 "You won't be able to get to the loading bay withought Kai's charisma."
