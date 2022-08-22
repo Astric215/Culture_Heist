@@ -59,10 +59,10 @@ The leader tapped on the map of the museum.
 
 ==Travel==
 
-+"Go to the car dealership"
--> Driver_End
++[Go to the car dealership]
+-> Car_Dealership
 
-+Go to the museum
++[Go to the museum]
 -> Outside
 
 +[Go to the back of the museum]
@@ -93,8 +93,30 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 
 TODO: add location nodes -Marlene and Patrick
 
+==Car_Dealership==
+"peepee poopoo"
+
++[Go to the museum]
+    ->Outside
+
++[Go to the Costume shop]
+ ->Costume_Store
+ 
++[Go to the back of the museum] //Only if you are the driver
+    ->Loading_Bay
+
 ==Costume_Store==
-As you enter the costume store you'll likely be greeted by Burt, the store manager. Although it may look like a normal costume shop, you may be able to sneak a peak behind Burts desk and see real police badges or forged signatures on several political documents."
+"As you enter the costume store you'll likely be greeted by Burt, the store manager. Although it may look like a normal costume shop, you may be able to sneak a peak behind Burts desk and see real police badges or forged signatures on several political documents."
+
++[Go to the museum]
+    ->Outside
+    
++[Go to the car dealership]
+    ->Car_Dealership
+    
++[Go to the back of the museum] //only if you are the driver
+    ->Loading_Bay
+
 
 ==Outside==
 "Once you're outside you'll be able to see the two giant doors leading to the museum's front hall." 
@@ -102,6 +124,15 @@ As you enter the costume store you'll likely be greeted by Burt, the store manag
 
 +[Enter the museum]
     ->Museum_Entryway
+    
++[Go to the car dealership]
+    ->Car_Dealership
+    
++[Go to the Costume shop]
+ ->Costume_Store
+ 
++[Go to the back of the museum] //Only if you are the driver
+    ->Loading_Bay
 
 ==Museum_Entryway==
 "The entryway will be the easiest room to blend into due to the large number of museum-goers walking around and buying their tickets at the front desk." 
@@ -118,7 +149,7 @@ As you enter the costume store you'll likely be greeted by Burt, the store manag
 "Against the eastern wall will be display cases filled with smaller pieces such as jewelry or fancy cutlery."
 "Although they're displayed elegantly and locked up tight, most of these pieces are shitty replicas made with fake jewels. Even so, you'll still find people gawking at their beauty talking about how 'fascinating' and 'unique' they are."
  
-+[Enter Side Hall 1]
++[Enter the art gallery]
     ->Side_Wing_1
 
 +[Enter Statue Room]
@@ -132,7 +163,7 @@ As you enter the costume store you'll likely be greeted by Burt, the store manag
 "The guards don't patrol this room as much as the others since it's usually just filled with old people taking a rest while their families leave them behind to rot alone."
 "The only thing of value for us to note is the large metal gate on the northern end of the room that leads to the guard hall."
 
-+[Go through metal gate] 
++[Go through the metal gate] 
 {
 -trait==Strong:
 "That's where you come in and use those muscles to lift the giant metal gate blocking the entrance to the Guard Hall. Unfortunately it will shut behind you once you crawl under, but you can deal with that again if you need to." 
@@ -142,13 +173,22 @@ As you enter the costume store you'll likely be greeted by Burt, the store manag
     ->Side_Wing_1
 }
 
++[Go to the Main Hall]
+    ->Main_Hall
+
 ==Side_Wing_2==
 "This wing of the museum is where the majority of the statues are displayed. Although most of the museum makes me shake my head, the statue room is weirdly comforting to me. Maybe it has something to do with my love of marble. Anyways the only important thing to note is the small vent on the north east end of the room.
 
-+[Enter vents to Mailroom] "Thanks to your small frame you should be able to crawl through the air vents and find your way to the Mailroom.
++[Enter the vents to the Mailroom]
+{
+-trait==Sneaky:
+"Thanks to your small frame you should be able to crawl through the air vents and find your way to the Mailroom."
     ->Mailroom
-TODO: Make a knot for when you can't enter
-//"Boss," {trait == Charismatic: Kai}{trait == Strong: Rico} chimes in, "There's absolutely no way I'll be able to fit through those vents. Maybe Jules could though?"
+-else:
+"Boss," {trait == Charismatic: Kai}{trait == Strong: Rico} chimes in, "There's absolutely no way I'll be able to fit through those vents. Maybe Jules could though?"
+"All right then where were we..."
+    ->Side_Wing_2
+}
 
 +[Go to the Main Hall]
     ->Main_Hall
@@ -164,15 +204,22 @@ TODO: Add pick up disguise knot and knot for if the disguise has already been pi
 
 +[Enter Vents to Side Hall 2]
     ->Side_Wing_2
-TODO: Make a knot for when you can't enter
-//"Boss," {trait == Charismatic: Kai}{trait == Strong: Rico} chimes in, "There's absolutely no way I'll be able to fit through those vents. Maybe Jules could though?"
-
+{
+-trait==Sneaky:
+"You should be able to crawl right back through the vents."
+    ->Side_Wing_2
+-else:
+"Boss," {trait == Charismatic: Kai}{trait == Strong: Rico} chimes in, "There's absolutely no way I'll be able to fit through those vents. Maybe Jules could though?"
+"All right then where were we..."
+    ->Mailroom
+}
     
 +[Enter Loading Bay]
 ->Loading_Bay
 
 ==Guard_Hall==
-TODO: I had a hard time coming up with a description because of how many states this room has. There's also many choices that may or may not be available in this room like grabbing the keycard etc... 
+TODO: I had a hard time coming up with a description because of how many states this room has. There's also many choices that may or may not be available in this room like grabbing the keycard etc...
+//Make sure to add that there is a metal gate leading to Side hall 1
 
 +[Go to the Mailroom]
     ->Mailroom
@@ -180,16 +227,22 @@ TODO: I had a hard time coming up with a description because of how many states 
 +[Go to Security Room]
     //If costumes obtained ->Costumes_Obtained
     //If costumes not obtained ->Costumes_not_Obtained
+TODO: Fix this
     
 +[Go to Vault Hall]
     ->Vault_Hall
 TODO: Make a knot for when you can't enter because you don't have the keycard
 //{trait == Strong: Rico}{trait == Sneaky: Jules} stops the boss "Wait wait wait, I'm gonna need a keycard to get in there first. Maybe one of the guards in this room will have one on them."
 
-+[Go to Side Hall 1] You'll just go ahead and lift that gate open one more time and head to the art gallery.
++[Go to Side Hall 1]
+{
+-trait==Strong:
+"You'll just go ahead and lift that gate open one more time and head to the art gallery." 
     ->Side_Wing_1
-TODO: Make a knot for when you can't enter
-//"Unfortunately you're not as strong as Rico, so you won't be able to do that."
+-else:
+"You wont be able to lift that".
+    ->Guard_Hall
+}
 
 ==Vault_Hall==
 "By this point you will have finally found a way into the room with the safe But your work isn't done here!"
@@ -205,7 +258,7 @@ TODO: Make a knot for when you can't enter
 //Option 2 for when the getaway car is set up
 "You'll then enter a huge warehouse with rows and rows of wooden crates and packing materials scattered about the floor. There's a red sports car near the exit ready to leave when you are."
 
---> END
+->END
 
 ==Costumes_Obtained==
 "When you enter the Security Room you'll see computer screens lining the walls. To your left will be the button you'll have to press to turn off the motion sensors around the vault. Thankfully you've already picked up the security guard uniforms so being spot won't be a problem."
