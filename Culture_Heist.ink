@@ -89,12 +89,12 @@ As you enter the costume store you'll likely be greeted by Burt, the store manag
 "Once you're outside you'll be able to see the two giant doors leading to the museum's front hall." 
 "The museum also received a large grant recently, so you'll see the cheesy bushes shaped like famous statues out there as well."
 
-+[Enter the meuseum]
++[Enter the museum]
     ->Museum_Entryway
 
 ==Museum_Entryway==
 "The entryway will be the easiest room to blend into due to the large number of museum-goers walking around and buying their tickets at the front desk." 
-"There will likely be several groups of children incessantly blabbing about what how they see boobies in every painting, or how 'Mindy's little brother keeps pulling on my hair.' So no need to worry about making too much noise either. The public's attention certainly won't be on you."
+"There will likely be several groups of children incessantly blabbing about how they see boobies in every painting, or how 'Mindy's little brother keeps pulling on my hair.' So no need to worry about making too much noise either. The public's attention certainly won't be on you."
 
 +[Go to the Main Hall]
     ->Main_Hall
@@ -144,7 +144,7 @@ TODO: Make a knot for when you can't enter
 "This is the mailroom where exhibits are shipped off and others are held before going on display. On the South end of the room is the door to the Loading Bay with a small mail slot next to it."
 
 *[Pick up disguises]
-TODO: Add pick up disguise knot and knot for if the diguise has already been picked up.
+TODO: Add pick up disguise knot and knot for if the disguise has already been picked up.
     
 +[Enter Guard Hall]
     ->Guard_Hall
@@ -189,7 +189,7 @@ TODO: Make a knot for when you can't enter
 //Option 1 for when the getaway car is NOT set up 
 "You'll then enter a huge warehouse with rows and rows of wooden crates and packing materials scattered about the floor."
 
-//Option 2 for when the geaway car is set up
+//Option 2 for when the getaway car is set up
 "You'll then enter a huge warehouse with rows and rows of wooden crates and packing materials scattered about the floor. There's a red sports car near the exit ready to leave when you are."
 
 --> END
@@ -212,7 +212,7 @@ Kai cuts the leader off "Wait wait wait. I didn't go through all that trouble gr
 ~next_end = ->Driver_End
 "Okay so Kai you are going to be the getaway driver."
 The leader pointed at the map again.
-"That means you won't be directly going into the museum. Instead you will organise disguises and get a car to the museum so the others can get out.'
+"That means you won't be directly going into the museum. Instead you will organize disguises and get a car to the museum so the others can get out.'
 
 -> Secret_Base
 // use + not * so when the story loops choices are still available
@@ -253,7 +253,7 @@ Rico spoke up "We are going to need to have the loading bay staff door unlocked 
 He pointed at the map.
 "It says here that the door is locked from the loading bay side."
 The leader studied the map.
-Kai mumbledunder his breath, " I'm sorry. I will make sure to unlock it for you guys."
+Kai mumbled under his breath, " I'm sorry. I will make sure to unlock it for you guys."
 The leader looked at Kai without moving his head. He then repositioned his body and looked around the table.
 "It's okay Kai. Right you are Rico, we do need that door to be open. Let's go over this again to make sure we have the right plan down."
 ->Driver_Start
@@ -274,19 +274,19 @@ The leader shifted his gaze towards Rico.  "Okay so Rico will be a sort of Recon
 
 == Distraction_not_created ==
 Jules cleared her throat. "I'm going to need some kind of distraction in order to get through the vent into the staff hallways."
-Rico piped up."I'm sure that I could take care of that some how."
-Jules looked at Rico intensly."I'm sure that you can."
+Rico piped up."I'm sure that I could take care of that somehow."
+Jules looked at Rico intensely."I'm sure that you can."
 The Leader sighed. "Okay we are going to go over this one more time. Let's try to incorporate some kind of distraction into the plan"
 ->Recon_Start
 
 == Guard_not_unconcious ==
-Jules hesitantly spoke. "Uh how am I supposed to get a keycard to unlock the vault."
-The leader looked at Jules and then back down at the map. "Let's see."
+Jules hesitantly spoke. "Uh, how am I supposed to get a keycard to unlock the vault?"
+The leader looked at Jules and then backed down at the map. "Let's see."
 "There's usually a solitary guard in the staff hallways."
 Rico excitedly chirped "I can totally knock that guy out."
-The leader looked startled by Rico's happiness to knock a man unconcious.
+The leader looked startled by Rico's happiness to knock a man unconscious.
 He cleared his throat and collected himself.
-"Okay lets go over this again and give Rico here a chance to flex his muscles this time."
+"Okay let's go over this again and give Rico here a chance to flex his muscles this time."
 ->Recon_Start
 
 == Cameras_not_off ==
@@ -294,15 +294,15 @@ Jules immediately got a bit irritated. "Come on guys if the cameras aren't off a
 The leader gave a quick glance in Jules direction.
 "Well you are the expert."
 The leader looked around the table and then pointed at the map.
-"The security room is in the staff halls. Rico should be able to get in there and shut of the cameras."
+"The security room is in the staff halls. Rico should be able to get in there and shut off the cameras."
 He pointed at the security room on the map.
 Rico spoke up. "I can totally get that done."
-The leader nodded his head. "Okay lets go over this again."
+The leader nodded his head. "Okay let's go over this again."
 
 ->Recon_Start
 
 == Security_not_off ==
-Jules sharply exhaled. "I can't steal from the vault unless the artifact security is turned off. To be more specific, I can't get the artifact out of it's glass casing without the security being tripped unless the security is shut off in advance."
+Jules sharply exhaled. "I can't steal from the vault unless the artifact security is turned off. To be more specific, I can't get the artifact out of its glass casing without the security being tripped unless the security is shut off in advance."
 The leader traced the vault on the map with his finger. He then drew a line from the vault to the security room. 
 "The controls for the artifact security have to be in the security room. Rico!"
 Rico perked up. "Uh yes sir!"
@@ -318,16 +318,16 @@ Rico nodded "Okay, I can do that."
 
 ==Thief_Start==
 ~next_end = ->Thief_End
-"And finally we get to our resident procurement specialist. Jules, your job is to use the resources and oppurtunities that Rico and Kai set up to get into the museum's storage vault and steal the artifact."
+"And finally we get to our resident procurement specialist. Jules, your job is to use the resources and opportunities that Rico and Kai set up to get into the museum's storage vault and steal the artifact."
 -> Thief_End
 
 ==Thief_End==
-"Does that plan sound good to everyone."
+"Does that plan sound good to everyone?"
 "Then that is it"
 -> Closing
 
 == Closing ==
-"Okay now that everyone knows their parts its time to get ready to leave. We only have until the artifact is transfered to pull this off. Lets go" 
+"Okay now that everyone knows their parts its time to get ready to leave. We only have until the artifact is transferred to pull this off. Lets go" 
 The leader paused for one second.
 "Good luck"
 //check to demonstrate times being held
