@@ -250,18 +250,64 @@ Recently, the museum announced its busiest year yet and the sudden influx can be
 <-advance_time
 -(start)
 "This wing of the museum is where the majority of the statues are displayed. Although most of the museum makes me shake my head, the statue room is weirdly comforting to me. Maybe it has something to do with my love of marble. Anyways the only important thing to note is the small vent on the north east end of the room.
-Set up like a temple, the wing was decorated with sculptures that depicted scenes from mythology and cult, while the walls were constructed of gold and ivory. Some of these statues have been on permanent display for decades and on either end of the room you can see transepts. Even the walls are carved metopes. While it is universally recognized that the best seen and conserved sculptures are those that exist in museums, some of these pieces of art are symbols of power and of ancient pasts where the collection of antiquities have been transported outside of their respective countries.
+Set up like a temple, the wing was decorated with sculptures that depicted scenes from mythology and cult, while the walls were constructed of gold and ivory. Some of these statues have been on permanent display for decades and on either end of the room you can see transepts. Even the walls are carved metopes. While it is universally recognized that the best seen and conserved sculptures are those that exist in museums, some of these pieces of art are symbols of power and of ancient pasts where the collection of antiquities have been transported outside of their respective countries. "
+The boss pondered the statue layout for a second and then pointed at a staute of the map.
+"This statue should create a neccesary distraction should something happen to it."
+
+{
+-timer < Distraction_Created:
+    "The museum patrons will likely be drifting from statue to statue observing each one."
+-timer == Distraction_Created:
+    "You should be able to see Rico push over a statue. That will kick up quite the frenzy amongst the museum goers."
+-else:
+    "Most museum patrons should be crowding the statue that Rico will have knocked over by this point. Any guards in the area will likely be dealing with that as well. This means that all eyes will be on that statue."
+}
+
+{
+-timer < Distraction_Created:
+    {
+    -trait==Sneaky:
+    "Thanks to your small frame you should be able to crawl through the air vents and find your way to the Mailroom."
+        ->Mailroom
+    -else:
+    "Boss," {trait == Charismatic: Kai}{trait == Strong: Rico} chimes in, "There's absolutely no way I'll be able to fit through those vents. Maybe Jules could though?"
+    The leader knodded.
+    "All right then where were we..."
+        ->Side_Wing_2
+    }
+-else:
+    " We are going to have to plan around that vent. There is certainly no way for you to get through it with all the museum patrons in the statue room. There is going to have to be some kind of distraction for you to slip in unnoticed."
+    ->Side_Wing_2
+}
 
 +[Enter the vents to the Mailroom]
 {
--trait==Sneaky:
-"Thanks to your small frame you should be able to crawl through the air vents and find your way to the Mailroom."
-    ->Mailroom
+-timer < Distraction_Created:
+    {
+    -trait==Sneaky:
+    "Thanks to your small frame you should be able to crawl through the air vents and find your way to the Mailroom."
+        ->Mailroom
+    -else:
+    "Boss," {trait == Charismatic: Kai}{trait == Strong: Rico} chimes in, "There's absolutely no way I'll be able to fit through those vents. Maybe Jules could though?"
+    The leader knodded.
+    "All right then where were we..."
+        ->Side_Wing_2
+    }
 -else:
-"Boss," {trait == Charismatic: Kai}{trait == Strong: Rico} chimes in, "There's absolutely no way I'll be able to fit through those vents. Maybe Jules could though?"
-"All right then where were we..."
+    " We are going to have to plan around that vent. There is certainly no way for you to get through it with all the museum patrons in the statue room. There is going to have to be some kind of distraction for you to slip in unnoticed."
     ->Side_Wing_2
 }
+
++{timer > Distraction_Created} [Push over a statue]
+    {
+    -trait==Strong:
+    "With your big muscles you should be able to push over a statue with minimal effort. Once you do that the museum patrons should be distracted enough to let Jules climb through the vent."
+    ~Distraction_Created = timer
+        ->Side_Wing_2
+    -else:
+    "You wont be strong enough to push a statue over. So we will have to wait for Rico to do it."
+        ->Side_Wing_2
+    }
 
 +[Go to the Main Hall]
     ->Main_Hall
@@ -272,17 +318,27 @@ Set up like a temple, the wing was decorated with sculptures that depicted scene
 ==Mailroom==
 <-advance_time
 -(start)
-Temporary exhibitions often include objects that have been borrowed and will later be returned to their owner, calling for a mailroom that doubles as a shipping store. Most of the objects on display are from the museum’s own personal collections so usually those would just go back into storage, however objects that are specifically acquired for an exhibition may require curator perk and revealing the security movement would be equivalent to divulging trade secrets. Early museums were often founded as ways for wealthy collectors to show off what they had acquired to less fortunate people and help to “educate” them. And unfortunately, that still stands to this day.
-"This is the mailroom where exhibits are shipped off and others are held before going on display. On the South end of the room is the door to the Loading Bay with a small mail slot next to it."
+Temporary exhibitions often include objects that have been borrowed and will later be returned to their owner, calling for a mailroom that doubles as a shipping store. Most of the objects on display are from the museum’s own personal collections so usually those would just go back into storage, however objects that are specifically acquired for an exhibition may require curator perk and revealing the security movement would be equivalent to divulging trade secrets. Early museums were often founded as ways for wealthy collectors to show off what they had acquired to less fortunate people and help to “educate” them. And unfortunately, that still stands to this day. On the North end of the room is the door to the Loading Bay with a small mail slot next to it."
 
 *[Pick up disguises]
-"Thanks to Kai, your fake ID's and security guard uniforms have been placed, and are ready to be put on"
+{
+-Costumes_Dropped_Off < timer:
+    "Thanks to Kai, your fake ID and security guard uniform will have been placed, and will be ready to be put on"
+    ~has_costume = true
+        ->Mailroom
+-Costumes_Dropped_Off == timer:
+    "You should see the guard disguises slip into the mailslot at that moment. You would then grab one and put in on"
+    ~has_costume = true
+        ->Mailroom
+-else:
+    "Unfortunately, you will have to wait for Kai to deliver the costumes before retrieving them."
     ->Mailroom
-    
+}
+
 +[Enter Guard Hall]
     ->Guard_Hall
 
-+[Enter Vents to Side Hall 2]
++[Enter Vents to the Statue room]
     ->Side_Wing_2
 {
 -trait==Sneaky:
@@ -384,19 +440,25 @@ The Leader furrowed his brow and thought about Jules' comment.
 ==Vault_Hall==
 <-advance_time
 -(start)
-"By this point you will have finally found a way into the room with the safe But your work isn't done here!"
+"By this point you will have finally found a way into the hallway to the safe But your work isn't done here!"
 
 { 
-    - Cameras_Off == 0:
+    - Cameras_Off > timer:
     "Thanks to Rico, the cameras should be fully disabled."
     - Cameras_Off == timer:
         "At that moment you'll be able to see the the camera's droop down towards the floor and the lights go off."
-    - timer < Cameras_Off:
+    - timer > Cameras_Off:
         "You can see a red light flashing near the cameras lense"
 }
 
 +[Walk up to the vault] //this needs the check to make sure the cameras are off before you can take this action
-    ->Vault
+{
+    -Cameras_Off >= timer:
+        ->Vault
+    -else:
+        "You wont be able to make it down the hall without having those cameras off. If you try with them still on then you will surely be caught. You will have to wait for Rico to turn off cameras."
+        ->Vault_Hall
+}
     
 +[Check watch]
     -> timer_text(-> start)
@@ -411,22 +473,59 @@ The Leader furrowed his brow and thought about Jules' comment.
 ==Loading_Bay==
 <-advance_time
 -(start)
-//Option 1 for when the getaway car is NOT set up 
+
+"You'll then enter a huge warehouse with rows and rows of wooden crates and packing materials scattered about the floor. There will also be a mailslot that leads to the mailroom of the museum. The final thing that you will notice is this door."
+The leader tapped a door on the map.
+"This door is typically locked to prevent traffic between the museum staff halls and the loading bay so it will need to be unlocked for us."
+The leader tapped the loading bay on the map.
+"This is where you will meet up for your getaway."
++{has_car && Car_Arrived > timer} [Park car in the loading bay]
+    ~Car_Arrived = timer
+{
+-Car_Arrived > timer:
+    "There will be a red sports car parked near the exit ready to leave when you are."
+//-else://write another else thing here
+}
+
++{Staff_Door_Unlocked < timer} [Unlock the staff door]
+    ~Staff_Door_Unlocked = timer
+    ->Loading_Bay
+
++[Go into the mailroom]
+{
+-Staff_Door_Unlocked < timer:
+    "Hmmmmm. The door will still be locked by that point so we cant have you going through yet."
+-trait == Charismatic:
+    "Kai, we don't need you to go into the museum hallways themselves so it is a better idea for you to wait and get ready to driver the others out."
+    Kai quickly nodded their head.
+    "You got it."
+    ->Loading_Bay
+-else:
+    ->Mailroom
+}
+
++{has_costume}[Drop off the guard disguise]
+    "You are going to slip the guard disguise into the mailslot for Rico to pick up."
+    ->Loading_Bay
 "You'll then enter a huge warehouse with rows and rows of wooden crates and packing materials scattered about the floor."
-
-//Option 2 for when the getaway car is set up
-"You'll then enter a huge warehouse with rows and rows of wooden crates and packing materials scattered about the floor. There's a red sports car near the exit ready to leave when you are."
-
++[Wait for the others and Escape]
+    ->next_end
+    
 +[Check watch]
     -> timer_text(-> start)
     
-->END
+-->END
 
 ==Security_Room==
 <-advance_time
 -(start)
-"When you enter the Security Room you'll see computer screens lining the walls. To your left will be the button you'll have to press to turn off the motion sensors around the vault. Thankfully, you've already picked up your security guard uniform so being spotted won't be a problem."
+"When you enter the Security Room you'll see computer screens lining the walls. To your left will be the button you'll have to press to turn off the motion sensors and cameras around the vault. Thankfully, you've already picked up your security guard uniform so being spotted won't be a problem."
 
++[Turn off the cameras and Vault security]
+    "You will have to inconspicuously walk up to the camera controls and stop their recording. Once that is done then Jules should be able to approach the vault. This will also allow Jules to remove the artifact from its secure container."
+    ~Cameras_Off = timer
+    ->Security_Room
+    
 +[Exit the Security Room]
     ->Guard_Hall
 
