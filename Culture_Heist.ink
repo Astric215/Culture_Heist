@@ -237,7 +237,8 @@ Set up like a temple, the wing was decorated with sculptures that depicted scene
 "This is the mailroom where exhibits are shipped off and others are held before going on display. On the South end of the room is the door to the Loading Bay with a small mail slot next to it."
 
 *[Pick up disguises]
-TODO: Add pick up disguise knot and knot for if the disguise has already been picked up.
+"Thanks to Kai, your fake ID's and security guard uniforms have been placed, and are ready to be put on"
+    ->Mailroom
     
 +[Enter Guard Hall]
     ->Guard_Hall
@@ -246,7 +247,7 @@ TODO: Add pick up disguise knot and knot for if the disguise has already been pi
     ->Side_Wing_2
 {
 -trait==Sneaky:
-"You should be able to crawl right back through the vents."
+"You should be able to crawl right back through those vents."
     ->Side_Wing_2
 -else:
 "Boss," {trait == Charismatic: Kai}{trait == Strong: Rico} chimes in, "There's absolutely no way I'll be able to fit through those vents. Maybe Jules could though?"
