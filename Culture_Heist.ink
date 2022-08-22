@@ -82,14 +82,19 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 
 TODO: add location nodes -Marlene and Patrick
 
+==Costume_Store==
+knknk
+
 ==Outside==
-"Once you're outside you'll be able to see the two giant doors leading to the museum's front hall. The museum also received a large grant recently, so you'll see the cheesy bushes shaped like famous statues out there as well.
+"Once you're outside you'll be able to see the two giant doors leading to the museum's front hall." 
+"The museum also received a large grant recently, so you'll see the cheesy bushes shaped like famous statues out there as well."
 
 +[Enter the meuseum]
     ->Museum_Entryway
 
 ==Museum_Entryway==
-"When you sneak in the museum's entryway, there will be a guard running patrol. No need to worry about this one though because she works a day job too so she's usually fast asleep."
+"The entryway will be the easiest room to blend into due to the large number of museum-goers walking around and buying their tickets at the front desk." 
+"There will likely be several groups of children incessantly blabbing about what how they see boobies in every painting, or how 'Mindy's little brother keeps pulling on my hair.' So no need to worry about making too much noise either. The public's attention certainly won't be on you."
 
 +[Go to the Main Hall]
     ->Main_Hall
@@ -98,19 +103,23 @@ TODO: add location nodes -Marlene and Patrick
     ->Outside
 
 ==Main_Hall==
-"This is where all of the less important historical artifacts are kept for public viewing."
+"This is where all of the less expensive artifacts are kept for public viewing."
+"Against the eastern wall will be display cases filled with smaller pieces such as jewelry or fancy cutlery."
+"Although they're displayed elegantly and locked up tight, most of these pieces are shitty replicas made with fake jewels. Even so, you'll still find people gawking at their beauty talking about how 'fascinating' and 'unique' they are."
  
 +[Enter Side Hall 1]
     ->Side_Wing_1
 
-+[Enter Side Hall 2]
++[Enter Statue Room]
     ->Side_Wing_2
     
 +[Go to Entryway]
     ->Museum_Entryway
 
 ==Side_Wing_1==
-"On one end of the room is a large metal gate that leads to the security room. Next to it is a vending machine, presumably for the guests."
+"Probably the least exciting room of the museum, the art gallery is lined with benches in the center facing outwards towards the walls."
+"The guards don't patrol this room as much as the others since it's usually just filled with old people taking a rest while their families leave them behind to rot alone."
+"The only thing of value for us to note is the large metal gate on the northern end of the room that leads to the guard hall."
 
 +[Enter Guard Hall] "That's where you come in and use those muscles to lift the giant metal gate blocking the entrance to the Guard Hall. Unfortunately it will shut behind you once you crawl under, but you can deal with that again if you need to."  
     ->Guard_Hall
@@ -120,7 +129,7 @@ TODO: Make a knot for when you can't enter
     ->Main_Hall
 
 ==Side_Wing_2==
-"This room is quite small. Mostly used for storage, you'll find cleaning supplies and tools here for setting up new exhibits. Theres also a vent on the east end of the room.
+"This wing of the museum is where the majority of the statues are displayed. Although most of the museum makes me shake my head, the statue room is weirdly comforting to me. Maybe it has something to do with my love of marble. Anyways the only important thing to note is the small vent on the north east end of the room.
 
 +[Enter vents to Mailroom] "Thanks to your small frame you should be able to crawl through the air vents and find your way to the Mailroom.
     ->Mailroom
@@ -130,7 +139,7 @@ TODO: Make a knot for when you can't enter
     ->Main_Hall
     
 ==Mailroom==
-"This is the mailroom where exhibits are shipped off and others are held before going on display. On the South end of the room is the door to the Loading Bay with a mail slot next to it."
+"This is the mailroom where exhibits are shipped off and others are held before going on display. On the South end of the room is the door to the Loading Bay with a small mail slot next to it."
 
 *[Pick up disguises]
 TODO: Add pick up disguise knot and knot for if he diguise has already been picked up.
@@ -172,9 +181,10 @@ TODO: Make a knot for when you can't enter
 
 ==Loading_Bay==
 //Option 1 for when the getaway car is NOT set up 
-"You'll then enter a huge warehouse with rows and rows of wooden crates and packing materials scattered about the floor.
+"You'll then enter a huge warehouse with rows and rows of wooden crates and packing materials scattered about the floor."
 
 //Option 2 for when the geaway car is set up
+
 
 --> END
 
