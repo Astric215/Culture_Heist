@@ -62,7 +62,7 @@ The leader tapped on the map of the museum.
 
 ==Travel==
 <-advance_time
-
+-(start)
 +[Go to the car dealership]
 -> Car_Dealership
 
@@ -72,7 +72,19 @@ The leader tapped on the map of the museum.
 +[Go to the back of the museum] //only if you are the driver
 -> Loading_Bay
 
-
++[Go to the Costume shop]
+ ->Costume_Store
+ 
++[Go to the back of the museum]
+{
+-trait==Charismatic:
+"You should be able to easily convince the guard out front that you're allowed to go back there."
+"Just a few tips, avoid making eye contact with people who might recognize you and remember to keep your head low and walk calmly and slowly. It is better to look as if you're busy and as if you're on your way somewhere in particular with something to do. Be inconspicuous."
+    ->Loading_Bay
+-else:
+"You won't be able to get to the loading bay withought Kai's charisma."
+    ->start
+}
 
 //locations go below here
 ==Secret_Base==
@@ -119,22 +131,8 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
     ->posttext
 }
 
-+[Go to the museum]
-    ->Outside
-
-+[Go to the Costume shop]
- ->Costume_Store
- 
-+[Go to the back of the museum]
-{
--trait==Charismatic:
-"You should be able to easily convince the guard out front that you're allowed to go back there."
-"Just a few tips, avoid making eye contact with people who might recognize you and remember to keep your head low and walk calmly and slowly. It is better to look as if you're busy and as if you're on your way somewhere in particular with something to do. Be inconspicuous."
-    ->Loading_Bay
--else:
-"You won't be able to get to the loading bay withought Kai's charisma."
-    ->Car_Dealership
-}
++[Leave the Car dealership]
+    ->Travel
 
 +[Check watch]
     -> timer_text(-> timeskip)
@@ -160,22 +158,8 @@ You might notice that he is a little…quirky. However, do not underestimate him
     ->Costume_Store
 }
 
-+[Go to the museum]
-    ->Outside
-    
-+[Go to the car dealership]
-    ->Car_Dealership
-    
-+[Go to the back of the museum] //only if you are the driver
-{
--trait==Charismatic:
-"You should be able to easily convince the guard out front that you're allowed to go back there."
-Just remember to know when to make your moves. This is something we learn from a young age.The trick is to actively maintain an awareness and have your eyes constantly scanning for an opportunity. I would tell you to consider doing things like mimicking postures, gestures, and movements because it would help get someone to like you or agree with you. But I think you, more than anybody, are aware of this and do it well. Keep doing that.
-    ->Loading_Bay
--else:
-"You won't be able to get to the loading bay withought Kai's charisma."
-    ->Costume_Store
-}
++[Leave the Costume store]
+    ->Travel
 
 +[Check watch]
     -> timer_text(-> timeskip)
@@ -193,14 +177,8 @@ At first glance, the museum’s exterior seems to be made up of limestone and cu
 +[Enter the museum]
     ->Museum_Entryway
     
-+[Go to the car dealership]
-    ->Car_Dealership
-    
-+[Go to the Costume shop]
- ->Costume_Store
- 
-+[Go to the back of the museum] //Only if you are the driver
-    ->Loading_Bay
++[Leave the museum]
+    ->Travel
     
 +[Check watch]
     -> timer_text(-> timeskip)
@@ -550,7 +528,10 @@ The leader tapped the loading bay on the map.
 "You'll then enter a huge warehouse with rows and rows of wooden crates and packing materials scattered about the floor."
 +[Wait for the others and Escape]
     ->next_end
-    
+
++[Leave the museum]
+    ->Travel
+
 +[Check watch]
     -> timer_text(-> timeskip)
     
