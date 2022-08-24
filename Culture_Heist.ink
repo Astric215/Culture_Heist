@@ -24,6 +24,7 @@ VAR Security_Off = 0
 ~ has_costume = false
 ~ has_car = false
 ~ has_keycard = false
+~ timer = timer_default
 
 == timer_text(-> return_to_story) ==
 -(postscript)
@@ -46,7 +47,6 @@ ____________________{timer} minutes remaining____________________
 {timer == 0: ->next_end}
 
 == function next_character ==
-~timer = timer_default
 ~trait++
 == introduction ==
 "So, here is the plan."
@@ -97,7 +97,6 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 "Okay {trait == Charismatic: Kai}{trait == Strong: Rico}{trait == Sneaky: Jules}. Here is the first thing you are going to do."
 
 -(posttext)
-<-advance_time
 -(timeskip)
 +[Leave the Base]"You are going to head out that door over there."
 ->Travel
@@ -152,10 +151,10 @@ You might notice that he is a little…quirky. However, do not underestimate him
 -trait==Charismatic:
 "You should have no problem walking right up to Burt, convincing him to give you guard uniforms and forged ID's, and waltzing right back out in no time."
     ~has_costume = true
-    ->Costume_Store
+    ->posttext
 -else:
 "Thankfully Kai has already used their charm to gain the trust of Burt, so you won't need to get another set of security guard uniforms. Just pick them up from the mailroom where they dropped them off. So, you're in the costume store..."
-    ->Costume_Store
+    ->posttext
 }
 
 +[Leave the Costume store]
@@ -240,7 +239,7 @@ I hope that they are not just for show. Just try not to hurt yourself please. An
 -else:
 "You won't be able to lift that."
 This is because lifting it is too heavy and can cause you muscle and joint damage as you are not trained to do this sort of heavy lifting. The dangers of lifting without proper training can cause spinal injuries such as herniated discs and in extreme cases, heavy lifting can even tear a heart artery, which could result in death. This is a load too heavy to lift and it is not worth putting a terrible strain on your body which can lead to painful muscle sprains and tears. You could even end up with a slipped disc or a hernia.
-    ->Side_Wing_1
+    ->posttext
 }
 
 +[Go to the Main Hall]
@@ -281,11 +280,11 @@ The boss pondered the statue layout for a second and then pointed at a staute of
     "Boss," {trait == Charismatic: Kai}{trait == Strong: Rico} chimes in, "There's absolutely no way I'll be able to fit through those vents. Maybe Jules could though?"
     The leader knodded.
     "All right then where were we..."
-        ->Side_Wing_2
+        ->posttext
     }
 -else:
     " We are going to have to plan around that vent. There is certainly no way for you to get through it with all the museum patrons in the statue room. There is going to have to be some kind of distraction for you to slip in unnoticed."
-    ->Side_Wing_2
+    ->posttext
 }
 
 +{timer > Distraction_Created} [Push over a statue]
@@ -293,10 +292,10 @@ The boss pondered the statue layout for a second and then pointed at a staute of
     -trait==Strong:
     "With your big muscles you should be able to push over a statue with minimal effort. Once you do that the museum patrons should be distracted enough to let Jules climb through the vent."
     ~Distraction_Created = timer
-        ->Side_Wing_2
+        ->posttext
     -else:
     "You wont be strong enough to push a statue over. So we will have to wait for Rico to do it."
-        ->Side_Wing_2
+        ->posttext
     }
 
 +[Go to the Main Hall]
@@ -317,14 +316,14 @@ Temporary exhibitions often include objects that have been borrowed and will lat
 -Costumes_Dropped_Off > timer:
     "Thanks to Kai, your fake ID and security guard uniform will have been placed, and will be ready to be put on"
     ~has_costume = true
-        ->Mailroom
+        ->posttext
 -Costumes_Dropped_Off == timer:
     "You should see the guard disguises slip into the mailslot at that moment. You would then grab one and put in on"
     ~has_costume = true
-        ->Mailroom
+        ->posttext
 -else:
     "Unfortunately, you will have to wait for Kai to deliver the costumes before retrieving them."
-    ->Mailroom
+    ->posttext
 }
 
 +[Enter Guard Hall]
@@ -339,7 +338,7 @@ Temporary exhibitions often include objects that have been borrowed and will lat
 -else:
 "Boss," {trait == Charismatic: Kai}{trait == Strong: Rico} chimes in, "There's absolutely no way I'll be able to fit through those vents. Maybe Jules could though?"
 "All right then where were we..."
-    ->Mailroom
+    ->posttext
 }
     
 +[Enter Loading Bay]
@@ -372,7 +371,7 @@ The leader tapped the crossing corridors on the map. There is also a large metal
     ->Side_Wing_1
 -else:
 "That gate will be way too heavy for you to lift. We are going to have to find a different way for you to get back into the museum proper."
-    ->Guard_Hall
+    ->posttext
 }
 
 +[Go to the Mailroom]
@@ -386,12 +385,12 @@ The leader tapped the crossing corridors on the map. There is also a large metal
     Jules intensely stared and the map and then at the leader.
     "Why would it be a good idea at all for me to walk into a room filled with guards."
     The leader nodded. "You are right that isnt a good idea."
-    ->Guard_Hall
+    ->posttext
 -else:
 Kai cuts the leader off "Wait wait wait. I didn't go through all that trouble grabbing that guard uniform for you to waltz into the Security Room looking like a convict." 
 "They're right," Rico says, "If I'm gonna be going into the Security Room I'm gonna need to pick up The uniform Kai dropped off for me in the mailroom."
 "All right then, so Rico, you don't go into the Security Room."
-    ->Guard_Hall
+    ->posttext
 }
     
 +[Go towards the vault]
@@ -400,7 +399,7 @@ Kai cuts the leader off "Wait wait wait. I didn't go through all that trouble gr
     ->Vault_Hall
 -else:
     {trait == Strong: Rico}{trait == Sneaky: Jules} stops the boss "Wait wait wait, I'm gonna need a keycard to get in there first. Maybe the guard in this room will have one on them."
-    ->Guard_Hall
+    ->posttext
 }
 +{Guard_Knocked_Out < timer} [Knock out the guard]
 {
@@ -410,11 +409,11 @@ Kai cuts the leader off "Wait wait wait. I didn't go through all that trouble gr
         Rico looked taken aback for a second but then nodded his head.
         "You got it, sir."
         ~Guard_Knocked_Out = timer
-        ->Guard_Hall
+        ->posttext
     -else:
         Jules bit her fingernail. "There is no way that I are going to be able to overpower that guard. It is much better for me to wait for Rico to do it."
         The leader shook his head in agreement.
-        ->Guard_Hall
+        ->posttext
 }
 +{Guard_Knocked_Out >= timer && has_keycard==false} [Take the guard's keycard]
     {
@@ -422,11 +421,11 @@ Kai cuts the leader off "Wait wait wait. I didn't go through all that trouble gr
 Jules quickly spoke up. "Buddy, if Rico takes the keycard from the guard, what keycard am I going to use to get into the hallway leading to the vault."
 The Leader furrowed his brow and thought about Jules' comment.
 "You are right Jules. Rico will have to leave that card there."
-->Guard_Hall
+->posttext
 -else:
 "You are going to go through that guard's pockets and get their keycard. Once you get the keycard off of that guard, you will finally have access to the hallway leading to the vault."
     ~has_keycard = true
-    ->Guard_Hall
+    ->posttext
 }
 
 +[Check watch]
@@ -454,7 +453,7 @@ The Leader furrowed his brow and thought about Jules' comment.
         ->Vault
     -else:
         "You wont be able to make it down the hall without having those cameras off. If you try with them still on then you will surely be caught. You will have to wait for Rico to turn off cameras."
-        ->Vault_Hall
+        ->posttext
 }
     
 +[Check watch]
@@ -500,22 +499,22 @@ The leader tapped the loading bay on the map.
 +{has_car && Car_Arrived < timer} [Park car in the loading bay]
     "You are going to leave the car there so all of you can use it later."
     ~Car_Arrived = timer
-    ->Loading_Bay
+    ->posttext
 
 +{Staff_Door_Unlocked < timer} [Unlock the staff door]
     ~Staff_Door_Unlocked = timer
-    ->Loading_Bay
+    ->posttext
 
 +[Go into the mailroom]
 {
 -Staff_Door_Unlocked < timer:
     "Hmmmmm. The door will still be locked by that point so we cant have you going through yet."
-    ->Loading_Bay
+    ->posttext
 -trait == Charismatic:
     "Kai, we don't need you to go into the museum hallways themselves so it is a better idea for you to wait and get ready to driver the others out."
     Kai quickly nodded their head.
     "You got it."
-    ->Loading_Bay
+    ->posttext
 -else:
     ->Mailroom
 }
@@ -524,7 +523,7 @@ The leader tapped the loading bay on the map.
     "You are going to slip the guard disguise into the mailslot for Rico to pick up."
     ~has_costume = false
     ~Costumes_Dropped_Off = timer
-    ->Loading_Bay
+    ->posttext
 "You'll then enter a huge warehouse with rows and rows of wooden crates and packing materials scattered about the floor."
 +[Wait for the others and Escape]
     ->next_end
@@ -547,12 +546,12 @@ The leader tapped the loading bay on the map.
 +{Cameras_Off < timer}[Turn off the cameras]
     "You will have to inconspicuously walk up to the camera controls and stop their recording. Once that is done then Jules should be able to approach the vault."
     ~Cameras_Off = timer
-    ->Security_Room
+    ->posttext
     
 +{Security_Off < timer}[Turn off the Vault Security]
     "You will have to walk towards the artifact security controls and shut off the motion sensors in the vault. Onece that is done Jules should be able to retrieve the artifact."
     ~Security_Off = timer
-    ->Security_Room
+    ->posttext
     
 +[Exit the Security Room]
     ->Guard_Hall
