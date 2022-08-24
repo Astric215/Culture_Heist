@@ -33,7 +33,7 @@ as well as overcome certain obstacles.
 The main storylet design pattern is the gauntlet but the game employs branching and bottlenecking to control 
 different parts of the heist. The characters are allowed to explore an area fully but are forced to move on 
 when they run out of time.
-The story structure consists of three consecutive storylets where the characters are tasked with respective 
+The story structure consists of three consecutive storys where the characters are tasked with respective 
 responsibilities and character traits that allow them to fulfill their duties on the team. For example, there 
 is the driver, the recon, and the thief. The driver is in charge of securing the costumes and a getaway 
 vehicle because they are the most persuasive so while the rest of the team proceeds with the plan to retrieve 
@@ -52,13 +52,14 @@ to complete it. This means that for example, the recon would not be able to retr
 on the basis that they are big and ‘strong’ and cannot fit through small spaces whereas the thief is smaller 
 and ‘sneakier’ so they could travel through vents and use a disguise to not get caught. The variables used for 
 tracking subplot progress were VAR timer = 0, VAR timer_default = 30, VAR has_costume = false, VAR has_car = false, 
-VAR has_keycard = false, VAR next_end = ->introduction. These are important tasks that must be completed in order 
-to proceed to the next one. Therefore, if the player runs out of time or they do not acquire all of the items 
+VAR has_keycard = false, VAR next_end = ->introduction. These are important variables that track time, inventory, and
+the next progrsession point. Therefore, if the player runs out of time or they do not acquire all of the items 
 needed to execute the heist, the plan falls through and the player must start over and reevaluate what went wrong 
 and what tool they need that they did not have. The variables used for tracking preparation actions are 
 VAR Car_Arrived = 0, VAR Costumes_Dropped_Off = 0, VAR Staff_Door_Unlocked = 0, VAR Distraction_Created = 0, 
 VAR Guard_Knocked_Out = 0, VAR Cameras_Off = 0, VAR Security_Off = 0. These variables are altered to indicate the 
-task has been completed and the player can proceed.
+task has been completed and the player can proceed. These variable are altered with the exact time that the state of
+their associated object changed so that it can change at that time for future characters.
 
 == Ink affordances: Text/Code ==
 "So, here is the plan." 
@@ -66,9 +67,6 @@ The leader tapped on the map of the museum.
 "We are going to steal the artifact." 
 ~ next_character() 
 
-/*-(postscript) 
--> timer_text(-> done) 
--(done)#*/ 
 "Are you ready to go over the plan?" 
 * [Yes] "Good." 
 -> Driver_Start 
@@ -104,7 +102,10 @@ within the allotted time, then they risk failing and having to start all over. P
 and a diversity of criminal methods replicating real sophisticated and high-value heists such as the feeling of 
 defeating security measures, using deception methods through the use of costumes, timing and target selection, 
 resources and risk acceptance, and failures and mistakes. This is all while simultaneously emphasizing the need for 
-community and cooperative team building.
+community and cooperative team building. The especially unique aspect of this timer as that it allows for actions
+that the player has taken in the past to be repeated as the other characters are used. If the car was parked at 
+turn 10, then the future characters will be able to access it at turn 10 and beyond. This means that the player
+can set up actions to take place at specific times in order to collaborate across characters.
 
 == Resources used ==
 Some of the resources we used include Professor Shapiro’s “Storylets_Examples_In_Ink.ink”, Lectures #12-16 on Ink 
