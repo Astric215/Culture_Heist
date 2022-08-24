@@ -50,7 +50,7 @@ VAR Security_Off = 0
 == introduction ==
 "So, here is the plan."
 The leader tapped on the map of the museum.
-"We are going to steal the [insert here]."
+"We are going to steal the Aztec artifact. We are going to run over this three times. Once for Kai our Charismatic escape driver. Once for Rico our strong support operator. And finally once for our sneaky thief Jules."
  ~ next_character()
 
 /*-(postscript)
