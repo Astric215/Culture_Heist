@@ -118,6 +118,11 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 <-advance_time
 -(timeskip)
 
++[Buy the rundown buggy]
+{trait == Charismatic: Kai}{trait == Strong: Rico}{trait == Sneaky: Jules} speaks up, "That's when I go up to the counter and ask how much that cute little yellow buggy I've had my eye on is."
+The leadear interjects, "I mean there's probably a better time for that but I guess you could???"
+What are you looking at me for, {trait == Charismatic: Rico's}{trait == Strong: My}{trait == Sneaky: Rico's} neice has been wanting a car for forever now, so I thought I'd get it as a gift for her 18th birthday.
+->posttext
 
 +[Ask to buy a stolen car]
 {
@@ -158,6 +163,12 @@ You might notice that he is a little…quirky. However, do not underestimate him
     ->posttext
 }
 
++[Try on the {trait == Charismatic: sexy cop}{trait == Strong: banana}{trait == Sneaky: scary clown} costume]
+{trait == Charismatic: Kai's face lights up, "If there's any sexy cop costumes I want to try one on!" Everyone at the table glares at Kai, "You know for fitting purposes... I've been working out a lot, gotta make sure my size hasn't chnged in case we take on another heist.}
+{trait == Strong: "Hehe", Rico chuckles in his deep voice, "While I'm here can I try on one of those banana costumes? I always thought they looked so silly." Rico looks at the leader with puppy dog eyes and he replies, "Sure Rico, if it will make you happy."}
+{trait == Sneaky: Jules speaks silently under her breath in embarrassment, "So I know we probably won't have much time for this, but since I'd already be at the costume shop... "The next few words spew out of her mouth in a rapid mumble", if they have any of those sick clown costumes I'd love to give myself a quick little scary clown makeover." The leader, shakes his head knowing he won't be able to change Jules' mind.}
+->posttext
+
 +[Leave the Costume store]
     ->Travel
 
@@ -169,10 +180,14 @@ You might notice that he is a little…quirky. However, do not underestimate him
 -(start)
 "Once you're outside the museum, you'll be able to see the two giant doors leading to the museum's front hall." 
 "The museum also received a large grant recently, so you'll see the cheesy bushes shaped like famous statues out there as well."
-At first glance, the museum’s exterior seems to be made up of limestone and cubed lights. The squared arches reveal many panes of glass that obscure the ability to look in or out, and with the roofline filled with camp guard towers, the building was like a fortress. Home to a world-renowned collection, this was a landmark building that claims it is a place that welcomes everyone. Collection highlights include the world’s largest and most important collection of works by Black, Indigenous, and Latin American artists and with their featured extraordinary period rooms, the museum invites visitors to see the arts in varied ways.
+"At first glance, the museum’s exterior seems to be made up of limestone and cubed lights. The squared arches reveal many panes of glass that obscure the ability to look in or out, and with the roofline filled with camp guard towers, the building was like a fortress. Home to a world-renowned collection, this was a landmark building that claims it is a place that welcomes everyone. Collection highlights include the world’s largest and most important collection of works by Black, Indigenous, and Latin American artists and with their featured extraordinary period rooms, the museum invites visitors to see the arts in varied ways."
 -(posttext)
 <-advance_time
 -(timeskip)
+
++[Survey the area]
+"
+->posttext
 
 +[Enter the museum]
     ->Museum_Entryway
@@ -187,7 +202,7 @@ At first glance, the museum’s exterior seems to be made up of limestone and cu
 -(start)
 "The entryway will be the easiest room to blend into due to the large number of museum-goers walking around and buying their tickets at the front desk." 
 "There will likely be several groups of children incessantly blabbing about how they see boobies in every painting, or how 'Mindy's little brother keeps pulling on my hair.' So no need to worry about making too much noise either. The public's attention certainly won't be on you."
-Recently, the museum announced its busiest year yet and the sudden influx can be attributed to the highly successful exhibitions. Averaging approximately over 30,000 visitors a day, the museum staff has been forced to close the exhibits for a day or two to meet about crowding and overworking conditions. Unlike the envisioned air-conditioned refuge you would imagine, the museum with its overcrowding gets uncomfortably warm and you can see countless numbers of visitors fanning themselves with maps and brochures as they race to find water fountains and seats. Blend in.
+"Recently, the museum announced its busiest year yet and the sudden influx can be attributed to the highly successful exhibitions. Averaging approximately over 30,000 visitors a day, the museum staff has been forced to close the exhibits for a day or two to meet about crowding and overworking conditions. Unlike the envisioned air-conditioned refuge you would imagine, the museum with its overcrowding gets uncomfortably warm and you can see countless numbers of visitors fanning themselves with maps and brochures as they race to find water fountains and seats. Blend in."
 -(posttext)
 <-advance_time
 -(timeskip)
@@ -209,6 +224,10 @@ Recently, the museum announced its busiest year yet and the sudden influx can be
  -(posttext)
 <-advance_time
 -(timeskip)
+
++[Steal a trinket]
+{trait == Charismatic: Kai}{trait == Strong: Rico}{trait == Sneaky: Jules} raises their hand, "If it's okay I'd like to steal something small while we're here. I know they're are all fake, but just knowing that copies of important pieces from our culture are out on display like that really bothers me." 
+->posttext
  
 +[Enter the art gallery]
     ->Side_Wing_1
@@ -226,7 +245,7 @@ Recently, the museum announced its busiest year yet and the sudden influx can be
 -(start)
 "Probably the least exciting room of the museum, the art gallery is lined with benches in the center facing outwards towards the walls."
 "The guards don't patrol this room as much as the others since it's usually just filled with old people taking a rest while their families leave them behind to rot alone."
-"The only thing of value for us to note is the large metal gate on the northern end of the room that leads to the staff hallways." The museum staff opens that gate electronically to get artifacts out onto the museum floor. The gate itself is rather heavy.
+"The only thing of value for us to note is the large metal gate on the northern end of the room that leads to the staff hallways." The museum staff opens that gate electronically to get artifacts out onto the museum floor. The gate itself is rather heavy."
 -(posttext)
 <-advance_time
 -(timeskip)
@@ -235,11 +254,11 @@ Recently, the museum announced its busiest year yet and the sudden influx can be
 {
 -trait==Strong:
 "That's where you come in and use those muscles to lift the giant metal gate blocking the entrance to the staff hallways. Unfortunately it will shut behind you once you crawl under, but you can deal with that again if you need to." 
-I hope that they are not just for show. Just try not to hurt yourself please. Any time you are upright and moving, you’re engaging the muscles in your core. The power, stability, and support generated from these muscles will help you move quicker and protect your lower back from injury. So avoid lifting with your back as well and try to only lift with your legs. We can’t have you hurting yourself on the job.
+"I hope that they are not just for show. Just try not to hurt yourself please. Any time you are upright and moving, you’re engaging the muscles in your core. The power, stability, and support generated from these muscles will help you move quicker and protect your lower back from injury. So avoid lifting with your back as well and try to only lift with your legs. We can’t have you hurting yourself on the job."
     ->Guard_Hall
 -else:
 "You won't be able to lift that."
-This is because lifting it is too heavy and can cause you muscle and joint damage as you are not trained to do this sort of heavy lifting. The dangers of lifting without proper training can cause spinal injuries such as herniated discs and in extreme cases, heavy lifting can even tear a heart artery, which could result in death. This is a load too heavy to lift and it is not worth putting a terrible strain on your body which can lead to painful muscle sprains and tears. You could even end up with a slipped disc or a hernia.
+"This is because lifting it is too heavy and can cause you muscle and joint damage as you are not trained to do this sort of heavy lifting. The dangers of lifting without proper training can cause spinal injuries such as herniated discs and in extreme cases, heavy lifting can even tear a heart artery, which could result in death. This is a load too heavy to lift and it is not worth putting a terrible strain on your body which can lead to painful muscle sprains and tears. You could even end up with a slipped disc or a hernia."
     ->posttext
 }
 
@@ -253,8 +272,8 @@ This is because lifting it is too heavy and can cause you muscle and joint damag
 -(start)
 ~print_text = true
 "This wing of the museum is where the majority of the statues are displayed. Although most of the museum makes me shake my head, the statue room is weirdly comforting to me. Maybe it has something to do with my love of marble. Anyways the only important thing to note is the small vent on the north east end of the room.
-Set up like a temple, the wing was decorated with sculptures that depicted scenes from mythology and cult, while the walls were constructed of gold and ivory. Some of these statues have been on permanent display for decades and on either end of the room you can see transepts. Even the walls are carved metopes. While it is universally recognized that the best seen and conserved sculptures are those that exist in museums, some of these pieces of art are symbols of power and of ancient pasts where the collection of antiquities have been transported outside of their respective countries. "
-The boss pondered the statue layout for a second and then pointed at a staute of the map.
+"Set up like a temple, the wing was decorated with sculptures that depicted scenes from mythology and cult, while the walls were constructed of gold and ivory. Some of these statues have been on permanent display for decades and on either end of the room you can see transepts. Even the walls are carved metopes. While it is universally recognized that the best seen and conserved sculptures are those that exist in museums, some of these pieces of art are symbols of power and of ancient pasts where the collection of antiquities have been transported outside of their respective countries."
+The boss pondered the statue layout for a second and then pointed at a staute on the map.
 "This statue should create a neccesary distraction should something happen to it."
 -(posttext)
 <-advance_time
