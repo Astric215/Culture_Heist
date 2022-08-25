@@ -8,6 +8,7 @@ VAR has_car = false
 VAR has_keycard = false
 
 VAR next_end = ->introduction
+VAR print_text = false
 LIST trait = (Nothing), Charismatic, Strong, Sneaky
 //preparation action variables.
 VAR Car_Arrived = 0
@@ -250,6 +251,7 @@ This is because lifting it is too heavy and can cause you muscle and joint damag
 
 ==Side_Wing_2==
 -(start)
+~print_text = true
 "This wing of the museum is where the majority of the statues are displayed. Although most of the museum makes me shake my head, the statue room is weirdly comforting to me. Maybe it has something to do with my love of marble. Anyways the only important thing to note is the small vent on the north east end of the room.
 Set up like a temple, the wing was decorated with sculptures that depicted scenes from mythology and cult, while the walls were constructed of gold and ivory. Some of these statues have been on permanent display for decades and on either end of the room you can see transepts. Even the walls are carved metopes. While it is universally recognized that the best seen and conserved sculptures are those that exist in museums, some of these pieces of art are symbols of power and of ancient pasts where the collection of antiquities have been transported outside of their respective countries. "
 The boss pondered the statue layout for a second and then pointed at a staute of the map.
@@ -268,6 +270,8 @@ The boss pondered the statue layout for a second and then pointed at a staute of
 -else:
     "Most museum patrons should be crowding the statue that Rico will have knocked over by this point. Any guards in the area will likely be dealing with that as well. This means that all eyes will be on that statue."
 }
+
+~print_text = false
 
 +[Enter the vents to the Mailroom]
 {
@@ -349,6 +353,7 @@ Temporary exhibitions often include objects that have been borrowed and will lat
 
 ==Guard_Hall==
 -(start)
+~print_text = true
 "There is a bit of a crossroads in the staff hallways. One of the halls will go north towards the Security room. The western hall will take you towards the vault. This hallway is a bit tricky though since in it locked off with a security door that can only be opened with a keycard that every guard carries. Finally the eastern hall will take you straight to the museum mail room. Since most traffic goes through this area, there should be a guard positioned there." 
 The leader tapped the crossing corridors on the map. There is also a large metal gate here that goes out onto the museum floor. The gate is quite heavy. Anyways, back to the guard."
 -(posttext)
@@ -363,6 +368,7 @@ The leader tapped the crossing corridors on the map. There is also a large metal
     - timer < Guard_Knocked_Out:
         "By this point in time Rico will have already knocked out the guard. You will see the guard laying on the ground where Rico laid them out."
 }
+~print_text = false
 
 +[Go through the metal gate]
 {
@@ -433,6 +439,7 @@ The Leader furrowed his brow and thought about Jules' comment.
 
 ==Vault_Hall==
 -(start)
+~print_text = true
 "By this point you will have finally found a way into the hallway to the safe But your work isn't done here! This hallway is filled with security cameras so you are going to have some issue moving through the area without being caught."
 -(posttext)
 <-advance_time
@@ -446,6 +453,7 @@ The Leader furrowed his brow and thought about Jules' comment.
     - timer > Cameras_Off:
         "You can see a red light flashing near the cameras lense"
 }
+~print_text = false
 
 +[Walk up to the vault] //this needs the check to make sure the cameras are off before you can take this action
 {
@@ -461,7 +469,7 @@ The Leader furrowed his brow and thought about Jules' comment.
 
 ==Vault==
 -(start)
-
+~print_text = true
 -(posttext)
 <-advance_time
 -(timeskip)
@@ -473,7 +481,7 @@ The Leader furrowed his brow and thought about Jules' comment.
     - timer < Security_Off:
         "By this point in time Rico will have already turned off the security so the security light should be off."
 }
-
+~print_text = false
 
 +{Security_Off <= timer}[Open the Vault]
     "At that point you will have finally done it. You're hands will touch the artifact and you will be able to get it out of there."
@@ -484,7 +492,7 @@ The Leader furrowed his brow and thought about Jules' comment.
     
 ==Loading_Bay==
 -(start)
-
+~print_text = true
 "You'll then enter a huge warehouse with rows and rows of wooden crates and packing materials scattered about the floor. There will also be a mailslot that leads to the mailroom of the museum. The final thing that you will notice is this door."
 The leader tapped a door on the map.
 "This door is typically locked to prevent traffic between the museum staff halls and the loading bay so it will need to be unlocked for us."
@@ -494,7 +502,8 @@ The leader tapped the loading bay on the map.
 <-advance_time
 -(timeskip)
 
-{Car_Arrived > timer: "There will be a red sports car parked near the exit ready to leave when you are."}
+{Car_Arrived >= timer && (print_text || timer == Car_Arrived): "There will be a red sports car parked near the exit ready to leave when you are."}
+~print_text = false
 
 +{has_car && Car_Arrived < timer} [Park car in the loading bay]
     "You are going to leave the car there so all of you can use it later."
