@@ -472,6 +472,7 @@ The Leader furrowed his brow and thought about Jules' comment.
 -(start)
 ~print_text = true
 "By this point you will have finally found a way into the hallway to the safe But your work isn't done here! This hallway is filled with security cameras so you are going to have some issue moving through the area without being caught."
+"At nearly all museums, what you see on public display is but a tiny taste of what they have to offer. Gallery space may be limited but basements and off-site storage are usually used to hold artifacts to make up for the lack of space. The vault is essential for this. The museum’s storage area is a peak of what happens in a museum beyond what has been pre-curated for viewing.This is where the Aztec artifact is held at. The vault is like the heart of the museum, but unlike its other displays, it is a large and inaccessible storage that serves as not just a practical asset but also the building’s central design component. It is a gray structure made of tens of millions of pounds of concrete sitting in the middle of the building with cameras installed at every possible angle of every entrance and exit. As a secure space, the vault protects its contents with armored walls and a tightly fashioned door closed with a complex lock."
 -(posttext)
 <-advance_time
 -(timeskip)
