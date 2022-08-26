@@ -4,30 +4,32 @@ Group Members: David Diaz, Marlene Lopez, Patrick Queiroz
 link to github: https://github.com/Astric215/Culture_Heist
 
  == Experience Goal == 
-The player is part of a team motivated to retrieve an object of immense social power because those the 
-player is stealing from wish to use the object in a way that they would disagree with the player, 
-allowing the player to play with the idea of morality.
+The player is part of a team motivated to decolonize a museum and retrieve an Aztec relic of immense social 
+power because those the player is stealing from are using the object for profit. This disagrees with the 
+player, allowing the player to play with the idea of morality. The player calls to restore cultural property 
+to its place of origin by stopping the reappropriation of the relic and taking it back. 
 Players will experience a sense of adventure which will be fulfilled through the exploration of the 
-game’s environment. Players will also have to use their reasoning and comprehension skills to formulate 
+game’s environment which players will also have to use their reasoning and comprehension skills to formulate 
 a high stakes robbery in order to reach the next area in ‘levels’. 
-The player should feel proud over their mastery of how the heist will go. The main emotional goal is 
-this feeling of pride of mastery over the state of the game world. In addition, the player experience 
-should also include feeling the need to work with coordination to succeed, and this kind of collaboration 
-is meant to evoke feelings of building community and strengthening team effectiveness.
+The player should feel proud over their mastery of how the heist will go. This makes the main emotional goal  
+a feeling of pride and mastery over the state of the game world. In addition, the player experience 
+should also include feeling the need to work with coordination to succeed as it will be this kind of collaboration 
+that evokes feelings of building community and strengthening team effectiveness.
 Our goal was to split the project into pieces where the two artists could write the dialogue on their own 
 and then incorporate that dialogue into the code. However, we quickly realized that making the dialogue 
 completely separate from the code made it difficult to playtest without a serious sense of organization.
 
 == Narrative Stance and Rationale == 
-Our story has 3 focalizers that shift throughout the story. Most of the story is told in second person by 
-a narrator who is describing the actions his team will be completing in their mission. However, the narrator 
-will often be interrupted while describing this plan which shifts the story into third person. This style of 
-narration helps highlight our experience goals which were to provoke collaboration and team building by 
-giving each character the opportunity to show off their unique skills in their team while simultaneously 
-allowing for environmental exploring and worldbuilding. Our story attempts to combine the creative aspects 
-of combing and constructing with reasoning, interpreting, and comprehending by describing how the player 
-interacts with unfulfilled tasks in a way to progress successfully with the plan to steal back the artifact 
-as well as overcome certain obstacles.
+Our story has 3 (4 including the leader) focalizers that shift throughout the story. Most of the story 
+is told in second person by a narrator who is describing the actions his team will be completing in their 
+mission. The narrator will often be interrupted while describing this plan which shifts the story 
+into third person. This creates a switch between 3rd person present tense due to the planning and 2nd person 
+future tense due to the envisioning aspect of the game. This style of narration helps highlight our experience 
+goals which were to provoke collaboration and team building by giving each character the opportunity to 
+show off their unique skills in their team while simultaneously allowing for environmental exploring and 
+worldbuilding. Our story attempts to combine the creative aspects of constructing with reasoning, interpreting, 
+and comprehending by describing how the player interacts with unfulfilled tasks in a way to progress 
+successfully with the plan to steal back the artifact as well as overcome certain obstacles.
 
 == Story Structure (graphs) == 
 The main storylet design pattern is the gauntlet but the game employs branching and bottlenecking to control 
