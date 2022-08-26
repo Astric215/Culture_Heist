@@ -30,15 +30,18 @@ VAR Security_Off = 0
 == timer_text(-> return_to_story) ==
 -(postscript)
 "At this point we would only have {timer} minutes to complete the heist."
-+ [Stop checking Watch]
+->wait(-> posttext)
+-(posttext)
+->return_to_story
+/*+ [Stop checking Watch]
     -> return_to_story
 
 + [Wait]
     {timer > 1: ->wait(-> postscript)}
-    ->next_end
+    ->next_end*/
 
 == wait(-> return_to) ==
-"You are gonna wait there for a minute."
+"You are gonna stop there for a minute while checking your watch."
 <-advance_time
 -> return_to
 
@@ -62,7 +65,7 @@ That is where we come in. We need to take matters into our own hands. Mexican cu
 
 "So, here is the plan."
 The leader tapped on the map of the museum.
-"We are going to steal the Aztec artifact. We are going to run over this three times. Once for Kai our Charismatic escape driver. Once for Rico our strong support operator. And finally once for our sneaky thief Jules."
+"We are going to steal the Aztec artifact. We are going to run over this three times. Once for Kai our Charismatic escape driver. Once for Rico our strong support operator. And finally once for our sneaky thief Jules. As part of the plan we may need yall to check your watches to waste a minute waiting for the others to get into position. Try not to check them too often though, we don't want you to spend the whole heist looking at your watch."
  ~ next_character()
 
  "Are you ready to go over the plan?"
@@ -109,6 +112,7 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 
 -(posttext)
 -(timeskip)
+<-print_time 
 +[Leave the Base]"You are going to head out that door over there."
 ->Travel
 
@@ -127,6 +131,7 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 -(posttext)
 <-advance_time
 -(timeskip)
+<-print_time 
 
 +[Buy the rundown buggy]
 {trait == Charismatic: Kai}{trait == Strong: Rico}{trait == Sneaky: Jules} speaks up, "That's when I go up to the counter and ask how much that cute little yellow buggy I've had my eye on is."
@@ -162,6 +167,7 @@ You might notice that he is a little…quirky. However, do not underestimate him
 -(posttext)
 <-advance_time
 -(timeskip)
+<-print_time 
 +[Acquire Security guard uniforms] //Only if you are the Driver
 {
 -trait==Charismatic:
@@ -194,6 +200,7 @@ You might notice that he is a little…quirky. However, do not underestimate him
 -(posttext)
 <-advance_time
 -(timeskip)
+<-print_time 
 
 +[Survey the area]
 "
@@ -216,6 +223,7 @@ You might notice that he is a little…quirky. However, do not underestimate him
 -(posttext)
 <-advance_time
 -(timeskip)
+<-print_time 
 
 +[Go to the Main Hall]
     ->Main_Hall
@@ -234,6 +242,7 @@ You might notice that he is a little…quirky. However, do not underestimate him
  -(posttext)
 <-advance_time
 -(timeskip)
+<-print_time 
 
 +[Steal a trinket]
 {trait == Charismatic: Kai}{trait == Strong: Rico}{trait == Sneaky: Jules} raises their hand, "If it's okay I'd like to steal something small while we're here. I know they're are all fake, but just knowing that copies of important pieces from our culture are out on display like that really bothers me." 
@@ -259,6 +268,7 @@ You might notice that he is a little…quirky. However, do not underestimate him
 -(posttext)
 <-advance_time
 -(timeskip)
+<-print_time 
 
 +[Take a seat on the bench and wait]
 "While sitting on the bench you'll be able to see many paintings depicting the tragedies of some of our history. One of the largest paintings shows hundreds of Spaniards on horses surrounded by the bodies of men, women and children. Although the original artist was clearly of Aztec themself, throughought history this painting somehow ended up in the hands of a white man who was able to sell it to the museum for hundreds of thousands of dollars."
@@ -293,6 +303,7 @@ The boss pondered the statue layout for a second and then pointed at a staute on
 -(posttext)
 <-advance_time
 -(timeskip)
+<-print_time 
 {
 -timer > Distraction_Created && print_text:
     "The museum patrons will likely be drifting from statue to statue observing each one."
@@ -345,6 +356,7 @@ The boss pondered the statue layout for a second and then pointed at a staute on
 -(posttext)
 <-advance_time
 -(timeskip)
+<-print_time 
 
 +{has_costume==false}[Pick up disguises]
 {
@@ -588,6 +600,7 @@ The leader tapped the loading bay on the map.
 -(posttext)
 <-advance_time
 -(timeskip)
+<-print_time 
 
 +{Cameras_Off < timer}[Turn off the cameras]
     "You will have to inconspicuously walk up to the camera controls and stop their recording. Once that is done then Jules should be able to approach the vault."
