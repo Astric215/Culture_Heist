@@ -585,6 +585,7 @@ The leader tapped the loading bay on the map.
 
 ==Security_Room==
 -(start)
+"The security room is the central space where guards monitor and control video surveillance, access control, and fire control in one room. Typically tightly secured and inaccessible to the general public, this room is under continuous video surveillance and recording for security and personnel accountability purposes. It is manned twenty-four hours a day, seven days a week, three hundred and sixty-five days a year to ensure continuous vigilance. High-density lighting is used and all of the power and lighting for this room is from the building’s emergency electrical service to ensure all equipment is on an uninterruptible power supply. Equipped with fire suppression and security systems to safeguard contents and occupants, the security room serves as headquarters during any emergency."
 "When you enter the Security Room you'll see computer screens lining the walls. To your left will be the button you'll have to press to turn off the motion sensors and cameras around the vault. Thankfully, you've already picked up your security guard uniform so being spotted won't be a problem."
 -(posttext)
 <-advance_time
