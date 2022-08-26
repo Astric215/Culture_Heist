@@ -236,7 +236,7 @@ You might notice that he is a little…quirky. However, do not underestimate him
 
 ==Main_Hall==
 -(start)
-"This is where all of the less expensive artifacts are kept for public viewing."
+"This is where all of the less expensive artifacts are kept for public viewing. The main hall is the main entry of the museum and it usually provides open space to accommodate exhibits and visitors. Its design reflects architectural significance as it holds public facilities such as shops and restaurants close while providing high security and environmental controls to protect the collections."
 "Against the eastern wall will be display cases filled with smaller pieces such as jewelry or fancy cutlery."
 "Although they're displayed elegantly and locked up tight, most of these pieces are shitty replicas made with fake jewels. Even so, you'll still find people gawking at their beauty talking about how 'fascinating' and 'unique' they are."
  -(posttext)
