@@ -262,6 +262,7 @@ You might notice that he is a little…quirky. However, do not underestimate him
 
 +[Take a seat on the bench and wait]
 "While sitting on the bench you'll be able to see many paintings depicting the tragedies of some of our history. One of the largest paintings shows hundreds of Spaniards on horses surrounded by the bodies of men, women and children. Although the original artist was clearly of Aztec themself, throughought history this painting somehow ended up in the hands of a white man who was able to sell it to the museum for hundreds of thousands of dollars."
+“Something curators have failed to do is present a narrative about the Aztec people that does not feed into the existing stereotypes that popular media has helped formulate. Aztec culture is often associated with bloodthirst, human sacrifice, and cruelty because that is the impression European museum visitors have of Mesoamerican cultures in general. This kind of violence is what the public associates with Aztec culture and not only is this reinforced through Hollywood’s popular culture but by museum exhibitions as well. The foundation of this kind of imagination is sixteenth-century European descriptions. This museum really struggles to narrate sacrifice and native religion in a way that humanizes the Aztecs through a decolonial lens.”
 "A shame no one even sits here long enough to understand the cultural and historical value of these pieces of art."
 ->posttext
 
