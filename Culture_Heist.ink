@@ -272,6 +272,7 @@ You might notice that he is a little…quirky. However, do not underestimate him
 
 +[Take a seat on the bench and wait]
 "While sitting on the bench you'll be able to see many paintings depicting the tragedies of some of our history. One of the largest paintings shows hundreds of Spaniards on horses surrounded by the bodies of men, women and children. Although the original artist was clearly of Aztec themself, throughought history this painting somehow ended up in the hands of a white man who was able to sell it to the museum for hundreds of thousands of dollars."
+“Something curators have failed to do is present a narrative about the Aztec people that does not feed into the existing stereotypes that popular media has helped formulate. Aztec culture is often associated with bloodthirst, human sacrifice, and cruelty because that is the impression European museum visitors have of Mesoamerican cultures in general. This kind of violence is what the public associates with Aztec culture and not only is this reinforced through Hollywood’s popular culture but by museum exhibitions as well. The foundation of this kind of imagination is sixteenth-century European descriptions. This museum really struggles to narrate sacrifice and native religion in a way that humanizes the Aztecs through a decolonial lens.”
 "A shame no one even sits here long enough to understand the cultural and historical value of these pieces of art."
 ->posttext
 
@@ -596,6 +597,7 @@ The leader tapped the loading bay on the map.
 
 ==Security_Room==
 -(start)
+"The security room is the central space where guards monitor and control video surveillance, access control, and fire control in one room. Typically tightly secured and inaccessible to the general public, this room is under continuous video surveillance and recording for security and personnel accountability purposes. It is manned twenty-four hours a day, seven days a week, three hundred and sixty-five days a year to ensure continuous vigilance. High-density lighting is used and all of the power and lighting for this room is from the building’s emergency electrical service to ensure all equipment is on an uninterruptible power supply. Equipped with fire suppression and security systems to safeguard contents and occupants, the security room serves as headquarters during any emergency."
 "When you enter the Security Room you'll see computer screens lining the walls. To your left will be the button you'll have to press to turn off the motion sensors and cameras around the vault. Thankfully, you've already picked up your security guard uniform so being spotted won't be a problem."
 -(posttext)
 <-advance_time
