@@ -250,6 +250,11 @@ You might notice that he is a little…quirky. However, do not underestimate him
 <-advance_time
 -(timeskip)
 
++[Take a seat on the bench and wait]
+"While sitting on the bench you'll be able to see many paintings depicting the tragedies of some of our history. One of the largest paintings shows hundreds of Spaniards on horses surrounded by the bodies of men, women and children. Although the original artist was clearly of Aztec themself, throughought history this painting somehow ended up in the hands of a white man who was able to sell it to the museum for hundreds of thousands of dollars."
+"A shame no one even sits here long enough to understand the cultural and historical value of these pieces of art."
+->posttext
+
 +[Go through the metal gate] 
 {
 -trait==Strong:
@@ -329,7 +334,7 @@ The boss pondered the statue layout for a second and then pointed at a staute on
     
 ==Mailroom==
 -(start)
-Temporary exhibitions often include objects that have been borrowed and will later be returned to their owner, calling for a mailroom that doubles as a shipping store. Most of the objects on display are from the museum’s own personal collections so usually those would just go back into storage, however objects that are specifically acquired for an exhibition may require curator perk and revealing the security movement would be equivalent to divulging trade secrets. Early museums were often founded as ways for wealthy collectors to show off what they had acquired to less fortunate people and help to “educate” them. And unfortunately, that still stands to this day. On the North end of the room is the door to the Loading Bay with a small mail slot next to it."
+"Temporary exhibitions often include objects that have been borrowed and will later be returned to their owner, calling for a mailroom that doubles as a shipping store. Most of the objects on display are from the museum’s own personal collections so usually those would just go back into storage, however objects that are specifically acquired for an exhibition may require curator perk and revealing the security movement would be equivalent to divulging trade secrets. Early museums were often founded as ways for wealthy collectors to show off what they had acquired to less fortunate people and help to “educate” them. And unfortunately, that still stands to this day. On the North end of the room is the door to the Loading Bay with a small mail slot next to it."
 -(posttext)
 <-advance_time
 -(timeskip)
@@ -639,7 +644,7 @@ Rico spoke up "We are going to need to have the loading bay staff door unlocked 
 He pointed at the map.
 "It says here that the door is locked from the loading bay side."
 The leader studied the map.
-Kai mumbled under his breath, " I'm sorry. I will make sure to unlock it for you guys."
+Kai mumbled under his breath, "I'm sorry. I will make sure to unlock it for you guys."
 The leader looked at Kai without moving his head. He then repositioned his body and looked around the table.
 "It's okay Kai. Right you are Rico, we do need that door to be open. Let's go over this again to make sure we have the right plan down."
 ->Driver_Start
