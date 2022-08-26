@@ -83,9 +83,6 @@ The leader tapped on the map of the museum.
 +[Go to the museum]
 -> Outside
 
-+[Go to the back of the museum] //only if you are the driver
--> Loading_Bay
-
 +[Go to the Costume shop]
  ->Costume_Store
  
@@ -391,7 +388,6 @@ The boss pondered the statue layout for a second and then pointed at a staute on
     ->Guard_Hall
 
 +[Enter Vents to the Statue room]
-    ->Side_Wing_2
 {
 -trait==Sneaky:
 "You should be able to crawl right back through those vents."
