@@ -30,7 +30,7 @@ VAR Security_Off = 0
 == timer_text(-> return_to_story) ==
 -(postscript)
 "At this point we would only have {timer} minutes to complete the heist."
-+ [Stop checking watch]
++ [Stop checking Watch]
     -> return_to_story
 
 + [Wait]
@@ -44,6 +44,9 @@ VAR Security_Off = 0
 
 == advance_time ==
 ~timer = timer - 1
+{timer == 0: ->next_end}
+
+== print_time ==
 ____________________{timer} minutes remaining____________________
 {timer == 0: ->next_end}
 
@@ -120,8 +123,8 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 
 +[Buy the rundown buggy]
 {trait == Charismatic: Kai}{trait == Strong: Rico}{trait == Sneaky: Jules} speaks up, "That's when I go up to the counter and ask how much that cute little yellow buggy I've had my eye on is."
-The leadear interjects, "I mean there's probably a better time for that but I guess you could???"
-What are you looking at me for, {trait == Charismatic: Rico's}{trait == Strong: My}{trait == Sneaky: Rico's} neice has been wanting a car for forever now, so I thought I'd get it as a gift for her 18th birthday.
+The leader interjects, "I mean there's probably a better time for that but I guess you could???"
+What are you looking at me for, {trait == Charismatic: Rico's}{trait == Strong: My}{trait == Sneaky: Rico's} niece has been wanting a car for forever now, so I thought I'd get it as a gift for her 18th birthday.
 ->posttext
 
 +[Ask to buy a stolen car]
@@ -283,20 +286,17 @@ The boss pondered the statue layout for a second and then pointed at a staute on
 -(posttext)
 <-advance_time
 -(timeskip)
-
 {
--timer > Distraction_Created:
+-timer > Distraction_Created && print_text:
     "The museum patrons will likely be drifting from statue to statue observing each one."
     Each statue has different representations in terms of their hand positioning, color and the items they may hold. So more often than not you can hear patrons trying to guess the deity and what the possible context behind the statues are. A lot of these statues range in different sizes, from small to big and even large with small size statues seemingly more difficult to craft and work on, so the quality of the work may not look as good as the work done on medium, or bigger statues but they are all very beautiful and impressive.
 -timer == Distraction_Created:
-    "You should be able to see Rico push over a statue. That will kick up quite the frenzy amongst the museum goers."
-    It would not be uncommon for people to start yelling and shouting in this situation. Kids might feel inclined to pick up some of the falling debris or they may feel inspired to push a statue themselves. Some patrons might even believe this to be a part of an art show demonstration. But even if someone is caught ‘accidentally’ breaking the statue, historically, the museum will take their information not to collect on the damage but to issue a full report to the insurance company so that they can get a check for their imminent claim.
--else:
+    "You should be able to see Rico push over a statue. That will kick up quite the frenzy amongst the museum goers.It would not be uncommon for people to start yelling and shouting in this situation. Kids might feel inclined to pick up some of the falling debris or they may feel inspired to push a statue themselves. Some patrons might even believe this to be a part of an art show demonstration. But even if someone is caught ‘accidentally’ breaking the statue, historically, the museum will take their information not to collect on the damage but to issue a full report to the insurance company so that they can get a check for their imminent claim."
+-timer < Distraction_Created  && (print_text || timer == Distraction_Created - 1):
     "Most museum patrons should be crowding the statue that Rico will have knocked over by this point. Any guards in the area will likely be dealing with that as well. This means that all eyes will be on that statue."
 }
-
+<-print_time 
 ~print_text = false
-
 +[Enter the vents to the Mailroom]
 {
 -timer <= Distraction_Created:
@@ -385,13 +385,14 @@ The leader tapped the crossing corridors on the map. There is also a large metal
 -(timeskip)
 
 { 
-    - Guard_Knocked_Out < timer:
+    - Guard_Knocked_Out < timer && print_text:
     "The guard should be standing directly in the center of the crossroads."
     - Guard_Knocked_Out == timer:
         "You will get there just in time to see Rico knock out the guard."
-    - timer < Guard_Knocked_Out:
+    - timer < Guard_Knocked_Out   && (print_text || timer == Guard_Knocked_Out - 1):
         "By this point in time Rico will have already knocked out the guard. You will see the guard laying on the ground where Rico laid them out."
 }
+<-print_time 
 ~print_text = false
 
 +[Go through the metal gate]
@@ -468,15 +469,15 @@ The Leader furrowed his brow and thought about Jules' comment.
 -(posttext)
 <-advance_time
 -(timeskip)
-
 { 
-    - Cameras_Off > timer:
+    - Cameras_Off > timer  && (print_text || timer == Cameras_Off - 1):
     "Thanks to Rico, the cameras should be fully disabled."
     - Cameras_Off == timer:
         "At that moment you'll be able to see the the camera's droop down towards the floor and the lights go off."
-    - timer > Cameras_Off:
+    - timer > Cameras_Off && print_text:
         "You can see a red light flashing near the cameras lense"
 }
+<-print_time 
 ~print_text = false
 
 +[Walk up to the vault] //this needs the check to make sure the cameras are off before you can take this action
@@ -498,13 +499,14 @@ The Leader furrowed his brow and thought about Jules' comment.
 <-advance_time
 -(timeskip)
 { 
-    - Security_Off < timer:
+    - Security_Off < timer && print_text:
     "There should be a blinking light that indicates that the vault security is on. You will have to wait for it to be off to open the vault."
     - Security_Off == timer:
         "You should see the light for the vault security turn off."
-    - timer < Security_Off:
+    - timer < Security_Off  && (print_text || timer == Security_Off - 1):
         "By this point in time Rico will have already turned off the security so the security light should be off."
 }
+<-print_time 
 ~print_text = false
 
 +{Security_Off <= timer}[Open the Vault]
@@ -527,6 +529,7 @@ The leader tapped the loading bay on the map.
 -(timeskip)
 
 {Car_Arrived >= timer && (print_text || timer == Car_Arrived): "There will be a red sports car parked near the exit ready to leave when you are."}
+<-print_time 
 ~print_text = false
 
 +{has_car && Car_Arrived < timer} [Park car in the loading bay]
@@ -552,7 +555,7 @@ The leader tapped the loading bay on the map.
     ->Mailroom
 }
 
-+{has_costume}[Drop off the guard disguise]
++{has_costume && trait==Charismatic}[Drop off the guard disguise]
     "You are going to slip the guard disguise into the mailslot for Rico to pick up."
     ~has_costume = false
     ~Costumes_Dropped_Off = timer
