@@ -385,6 +385,8 @@ The boss pondered the statue layout for a second and then pointed at a staute on
 ==Guard_Hall==
 -(start)
 ~print_text = true
+“The guard hall is the part of the building with the guards on assigned shifts in accordance with safety and security rules and regulations. More often than not, you can find the guards patrolling and performing a variety of custodial duties like contact with maintenance crews, law enforcement officials, and the general public to maintain security. This work is performed under the supervision of a higher level guard and positions vary depending on the assigned shift. These are the guards in charge of preventing theft in the building and allowing only authorized material in and out of the building while maintaining the entry/exit register.”
+
 "There is a bit of a crossroads in the staff hallways. One of the halls will go north towards the Security room. The western hall will take you towards the vault. This hallway is a bit tricky though since in it locked off with a security door that can only be opened with a keycard that every guard carries. Finally the eastern hall will take you straight to the museum mail room. Since most traffic goes through this area, there should be a guard positioned there." 
 The leader tapped the crossing corridors on the map. There is also a large metal gate here that goes out onto the museum floor. The gate is quite heavy. Anyways, back to the guard."
 -(posttext)
