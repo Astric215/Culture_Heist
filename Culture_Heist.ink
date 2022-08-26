@@ -56,11 +56,11 @@ ____________________{timer} minutes remaining____________________
 == function next_character ==
 ~trait++
 == introduction ==
-“This year marks the five hundredth anniversary of the Spanish conquest of the Aztec Empire. In remembrance, Mexico has made numerous requests to retrieve a princess Aztec headdress from the United States, however they have been ignored and ridiculed. The United States denies Mexico’s request to reclaim their cultural heritage on the basis that the ancient relic is at risk of being damaged during transport. Thus, disallowing the request of reclamation to be fulfilled. As a valuable piece of the nation’s history, it is unclear as to how the ancient relic made its way thousands of miles to the mainland United States. And despite lawsuits having been underway for decades to reclaim the elaborate feather headdress believed to have been worn by an Aztec Emperor, Mexico continues to insist on bringing back the artifact to no avail. The United States has made the artifact into a major tourist attraction for the museum and continues to reappropriate the relic for its own gains. 
+“This year marks the five hundredth anniversary of the Spanish conquest of the Aztec Empire. In remembrance, Mexico has made numerous requests to retrieve a princess Aztec headdress from the United States, however they have been ignored and ridiculed. The United States denies Mexico’s request to reclaim their cultural heritage on the basis that the ancient relic is at risk of being damaged during transport. Thus, disallowing the request of reclamation to be fulfilled. As a valuable piece of the nation’s history, it is unclear as to how the ancient relic made its way thousands of miles to the mainland United States. And despite lawsuits having been underway for decades to reclaim the elaborate feather headdress believed to have been worn by an Aztec Emperor, Mexico continues to insist on bringing back the artifact to no avail. The United States has made the artifact into a major tourist attraction for the museum and continues to reappropriate the relic for its own gains."
 
-It is our job to help right the historical wrongs enacted by colonizers. The pillaging of artifacts must stop because it has been long overdue for material cultural heritage to be returned to its rightful and original owners. Museums will not listen to the pleas of the people to have them return archaeological artifacts, and the calls to restore cultural property to places of origin are constantly being ignored. These institutions and structures of power are steeped in historical colonial practice and old money. While some items end up in museum collections for reasons other than looting and theft, the Aztec artifact is a piece considered one of the most important historical relics in Mexico and its several requests for its return have been unsuccessful. The museum professionals are not “better qualified” to care for the artifact. These professionals making these judgements are white European men who cannot or will not acknowledge that disputes over cultural property are part of the decolonization of museums. They have been benefitting from a colonial past and it is due time to take ownership of their histories and return what is not theirs to its rightful owners. Whether it is voluntarily or involuntarily. 
+"It is our job to help right the historical wrongs enacted by colonizers. The pillaging of artifacts must stop because it has been long overdue for material cultural heritage to be returned to its rightful and original owners. Museums will not listen to the pleas of the people to have them return archaeological artifacts, and the calls to restore cultural property to places of origin are constantly being ignored. These institutions and structures of power are steeped in historical colonial practice and old money. While some items end up in museum collections for reasons other than looting and theft, the Aztec artifact is a piece considered one of the most important historical relics in Mexico and its several requests for its return have been unsuccessful. The museum professionals are not “better qualified” to care for the artifact. These professionals making these judgements are white European men who cannot or will not acknowledge that disputes over cultural property are part of the decolonization of museums. They have been benefitting from a colonial past and it is due time to take ownership of their histories and return what is not theirs to its rightful owners. Whether it is voluntarily or involuntarily." 
 
-That is where we come in. We need to take matters into our own hands. Mexican cultural heritage can no longer remain a prisoner of Western museums. These people have no right or claim to our cultural property. Yet, they continue to lock up our legacy and claim an entitlement to keep it despite knowing it was taken by colonial armies through what would now be considered as crimes against humanity.”
+"That is where we come in. We need to take matters into our own hands. Mexican cultural heritage can no longer remain a prisoner of Western museums. These people have no right or claim to our cultural property. Yet, they continue to lock up our legacy and claim an entitlement to keep it despite knowing it was taken by colonial armies through what would now be considered as crimes against humanity.”
 
 
 "So, here is the plan."
@@ -133,7 +133,7 @@ The leader looked at {trait == Charismatic: Kai}{trait == Strong: Rico}{trait ==
 -(timeskip)
 <-print_time 
 
-+[Buy the rundown buggy]
+*[Buy the rundown buggy]
 {trait == Charismatic: Kai}{trait == Strong: Rico}{trait == Sneaky: Jules} speaks up, "That's when I go up to the counter and ask how much that cute little yellow buggy I've had my eye on is."
 The leader interjects, "I mean there's probably a better time for that but I guess you could???"
 What are you looking at me for, {trait == Charismatic: Rico's}{trait == Strong: My}{trait == Sneaky: Rico's} niece has been wanting a car for forever now, so I thought I'd get it as a gift for her 18th birthday.
@@ -203,7 +203,7 @@ You might notice that he is a little…quirky. However, do not underestimate him
 <-print_time 
 
 +[Survey the area]
-"
+"Although we already have a plan, it could be useful to look around the building for any entrances or exits we might have missed in case something bad goes down and you need a quick escape."
 ->posttext
 
 +[Enter the museum]
@@ -224,6 +224,11 @@ You might notice that he is a little…quirky. However, do not underestimate him
 <-advance_time
 -(timeskip)
 <-print_time 
+
++[Look around]
+"If you wanted to you could look take a look at some of the museum-goers; could help you blend in a bit more."
+"It's honestly kind of sad how many of the people at this museum really have no idea of the historical importance of anything there. Whenever I went to visit, which did not happen often, I might ask a tour guide a question about one of the art pieces on display, and their answers always sound like they took it right out of one of their whitewashed high school history text books." 
+->posttext
 
 +[Go to the Main Hall]
     ->Main_Hall
@@ -344,6 +349,10 @@ The boss pondered the statue layout for a second and then pointed at a staute on
     "You wont be strong enough to push a statue over. So we will have to wait for Rico to do it."
         ->posttext
     }
+    
++[Speak to a tour guide]
+"If you'd like to you could speak to a tour guide." They'll likely not of much to say about the statues, but at least they can point you to where the bathroom is."
+->posttext
 
 +[Go to the Main Hall]
     ->Main_Hall
@@ -373,6 +382,10 @@ The boss pondered the statue layout for a second and then pointed at a staute on
     "Unfortunately, you will have to wait for Kai to deliver the costumes before retrieving them."
     ->posttext
 }
+
++[Take a peak at some of the other mail]
+{trait == Strong: Rico}{trait == Sneaky: Jules} interjects, "Once I'm in the mailroom I'd like to look around at some of the other exhibits coming in and out of the museum. Maybe it would help us with another heist if we decide to do this again."
+->posttext
 
 +[Enter Guard Hall]
     ->Guard_Hall
@@ -481,6 +494,11 @@ The Leader furrowed his brow and thought about Jules' comment.
     ->posttext
 }
 
++[Cause a commotion]
+{trait == Strong: Rico interupts the boss, "That's when I pull my pants down and start running up and down the halls right." "I mean, no? I hope you don't actually do that Rico, it's a complete waist of time." "I was just thinking about it I'm not gonna do it."}
+{trait == Sneaky: With a menacing look on her face Jules interjects, "And then I take out my pistol and shoot one of the guards in the leg." "Oh my god no!" the boss shouts, "We're not trying to hurt anyone here, we're just take secretly taking back what's ours. No shooting anyone Jules. "Alright, boss, but I'm gonna journal about it when I get there to hold me off."}
+->posttext
+
 +[Check watch]
     -> timer_text(-> timeskip)
 
@@ -503,6 +521,14 @@ The Leader furrowed his brow and thought about Jules' comment.
 <-print_time 
 ~print_text = false
 
++[Wink at the camera]
+{
+    -timer > Cameras_Off && print_text:
+        Jules speaks up "While the cameras are still on I'm going to wink at the camera and give a little monologue about how this artifact is rightfully ours, and we are reclaiming our own property as should have been done centuries ago."
+        "Sure Jules", the boss replies, "It'll all be deleted once the cameras are erased, but if that will make you happy go for it I guess."
+}   
+->posttext
+    
 +[Walk up to the vault] //this needs the check to make sure the cameras are off before you can take this action
 {
     -Cameras_Off >= timer:
@@ -603,6 +629,10 @@ The leader tapped the loading bay on the map.
 <-advance_time
 -(timeskip)
 <-print_time 
+
++[Speak to a guard]
+"If you wanted to you could probably chat with one of the guards. I know who's working today and they're not too bright, so they might just show you which buttons you need to press to turn of the vault security and cameras."
+->posttext
 
 +{Cameras_Off < timer}[Turn off the cameras]
     "You will have to inconspicuously walk up to the camera controls and stop their recording. Once that is done then Jules should be able to approach the vault."
