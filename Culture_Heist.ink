@@ -53,6 +53,13 @@ ____________________{timer} minutes remaining____________________
 == function next_character ==
 ~trait++
 == introduction ==
+“This year marks the five hundredth anniversary of the Spanish conquest of the Aztec Empire. In remembrance, Mexico has made numerous requests to retrieve a princess Aztec headdress from the United States, however they have been ignored and ridiculed. The United States denies Mexico’s request to reclaim their cultural heritage on the basis that the ancient relic is at risk of being damaged during transport. Thus, disallowing the request of reclamation to be fulfilled. As a valuable piece of the nation’s history, it is unclear as to how the ancient relic made its way thousands of miles to the mainland United States. And despite lawsuits having been underway for decades to reclaim the elaborate feather headdress believed to have been worn by an Aztec Emperor, Mexico continues to insist on bringing back the artifact to no avail. The United States has made the artifact into a major tourist attraction for the museum and continues to reappropriate the relic for its own gains. 
+
+It is our job to help right the historical wrongs enacted by colonizers. The pillaging of artifacts must stop because it has been long overdue for material cultural heritage to be returned to its rightful and original owners. Museums will not listen to the pleas of the people to have them return archaeological artifacts, and the calls to restore cultural property to places of origin are constantly being ignored. These institutions and structures of power are steeped in historical colonial practice and old money. While some items end up in museum collections for reasons other than looting and theft, the Aztec artifact is a piece considered one of the most important historical relics in Mexico and its several requests for its return have been unsuccessful. The museum professionals are not “better qualified” to care for the artifact. These professionals making these judgements are white European men who cannot or will not acknowledge that disputes over cultural property are part of the decolonization of museums. They have been benefitting from a colonial past and it is due time to take ownership of their histories and return what is not theirs to its rightful owners. Whether it is voluntarily or involuntarily. 
+
+That is where we come in. We need to take matters into our own hands. Mexican cultural heritage can no longer remain a prisoner of Western museums. These people have no right or claim to our cultural property. Yet, they continue to lock up our legacy and claim an entitlement to keep it despite knowing it was taken by colonial armies through what would now be considered as crimes against humanity.”
+
+
 "So, here is the plan."
 The leader tapped on the map of the museum.
 "We are going to steal the Aztec artifact. We are going to run over this three times. Once for Kai our Charismatic escape driver. Once for Rico our strong support operator. And finally once for our sneaky thief Jules."
@@ -378,6 +385,8 @@ The boss pondered the statue layout for a second and then pointed at a staute on
 ==Guard_Hall==
 -(start)
 ~print_text = true
+“The guard hall is the part of the building with the guards on assigned shifts in accordance with safety and security rules and regulations. More often than not, you can find the guards patrolling and performing a variety of custodial duties like contact with maintenance crews, law enforcement officials, and the general public to maintain security. This work is performed under the supervision of a higher level guard and positions vary depending on the assigned shift. These are the guards in charge of preventing theft in the building and allowing only authorized material in and out of the building while maintaining the entry/exit register.”
+
 "There is a bit of a crossroads in the staff hallways. One of the halls will go north towards the Security room. The western hall will take you towards the vault. This hallway is a bit tricky though since in it locked off with a security door that can only be opened with a keycard that every guard carries. Finally the eastern hall will take you straight to the museum mail room. Since most traffic goes through this area, there should be a guard positioned there." 
 The leader tapped the crossing corridors on the map. There is also a large metal gate here that goes out onto the museum floor. The gate is quite heavy. Anyways, back to the guard."
 -(posttext)
@@ -466,6 +475,7 @@ The Leader furrowed his brow and thought about Jules' comment.
 -(start)
 ~print_text = true
 "By this point you will have finally found a way into the hallway to the safe But your work isn't done here! This hallway is filled with security cameras so you are going to have some issue moving through the area without being caught."
+"At nearly all museums, what you see on public display is but a tiny taste of what they have to offer. Gallery space may be limited but basements and off-site storage are usually used to hold artifacts to make up for the lack of space. The vault is essential for this. The museum’s storage area is a peak of what happens in a museum beyond what has been pre-curated for viewing.This is where the Aztec artifact is held at. The vault is like the heart of the museum, but unlike its other displays, it is a large and inaccessible storage that serves as not just a practical asset but also the building’s central design component. It is a gray structure made of tens of millions of pounds of concrete sitting in the middle of the building with cameras installed at every possible angle of every entrance and exit. As a secure space, the vault protects its contents with armored walls and a tightly fashioned door closed with a complex lock."
 -(posttext)
 <-advance_time
 -(timeskip)
